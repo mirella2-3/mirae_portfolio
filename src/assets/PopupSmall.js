@@ -1,0 +1,23 @@
+const PopupSmall = [
+    '/images/popup-image/PopUp-image01.png',
+    '/images/popup-image/PopUp-image02.png',
+    '/images/popup-image/PopUp-image03.png',
+    '/images/popup-image/PopUp-image04.png',
+    '/images/popup-image/PopUp-image05.png',
+    '/images/popup-image/PopUp-image06.png',
+    '/images/popup-image/PopUp-image07.png',
+    '/images/popup-image/PopUp-image08.png',
+    '/images/popup-image/PopUp-image09.png',
+    '/images/popup-image/PopUp-image10.png',
+    '/images/popup-image/PopUp-image11.png',
+    '/images/popup-image/PopUp-image12.png',
+    '/images/popup-image/PopUp-image13.png',
+    '/images/popup-image/PopUp-image14.png',
+    '/images/popup-image/PopUp-image15.png',
+    '/images/popup-image/PopUp-image16.png',
+    '/images/popup-image/PopUp-image17.png',
+    '/images/popup-image/PopUp-image18.png',
+    '/images/popup-image/PopUp-image19.png',
+    '/images/popup-image/PopUp-image20.png',
+];
+export default PopupSmall;
