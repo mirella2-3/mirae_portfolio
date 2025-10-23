@@ -80,14 +80,14 @@ const CardIndex = () => {
         });
 
         gsap.to('.letter-out', {
-            y: 300, // Move it down by 200px
+            y: 300,
             scrollTrigger: {
                 trigger: '.cards',
-                start: 'top 20%', // When the top of the .cards hits the 20% mark of the viewport
-                end: 'top 40%', // Ends when the top reaches 40% of the viewport
-                scrub: true, // Sync with scrolling
-                pin: true, // Keep the letter elements pinned while scrolling
-                anticipatePin: 1, // Smooth pinning
+                start: 'top 20%',
+                end: 'top 40%',
+                scrub: true,
+                pin: true,
+                anticipatePin: 1,
             },
         });
 
