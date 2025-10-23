@@ -6,7 +6,7 @@ import ProfilePage from '../../components/ProfilePage/ProfilePage';
 import WorkGallery from '../../components/WorkGallery/WorkGallery';
 import { HomeStyle } from './style';
 import Intro from '../../components/Home/Intro';
-import AboutMe from '../../components/Aboutme/Aboutme';
+import AboutMe from '../../components/AboutMe/AboutMe';
 import Intro2 from '../../components/Home/Intro2';
 
 const Home = () => {
