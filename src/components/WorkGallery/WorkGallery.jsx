@@ -40,7 +40,6 @@ const WorkGallery = () => {
                 end: 'top 300px',
                 toggleActions: 'play none none reverse',
             },
-            marker: true,
         });
     }, []);
 

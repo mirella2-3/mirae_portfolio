@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import Lenis from '@studio-freight/lenis';
 import CardData from '../../assets/CardData';
-import { AllStyle, CardStyle } from './style';
+import { CardStyle } from './style';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -67,29 +67,6 @@ const CardIndex = () => {
                 },
             });
         });
-        gsap.to('.letter-in', {
-            y: 200, // Move it down by 200px
-            scrollTrigger: {
-                trigger: '.cards',
-                start: 'top 20%', // When the top of the .cards hits the 20% mark of the viewport
-                end: 'top 40%', // Ends when the top reaches 40% of the viewport
-                scrub: true, // Sync with scrolling
-                pin: true, // Keep the letter elements pinned while scrolling
-                anticipatePin: 1, // Smooth pinning
-            },
-        });
-
-        gsap.to('.letter-out', {
-            y: 300,
-            scrollTrigger: {
-                trigger: '.cards',
-                start: 'top 20%',
-                end: 'top 40%',
-                scrub: true,
-                pin: true,
-                anticipatePin: 1,
-            },
-        });
 
         return () => {
             ScrollTrigger.getAll().forEach((st) => st.kill());
@@ -99,17 +76,6 @@ const CardIndex = () => {
 
     return (
         <>
-            <AllStyle className="con1">
-                <div className="letter-wrap">
-                    <div className="letter-in">
-                        <img src="/images/Intro-image/letter-in.png" alt="" />
-                    </div>
-                    <div className="letter-out">
-                        <img src="/images/Intro-image/letter-out.png" alt="" />
-                    </div>
-                </div>
-            </AllStyle>
-
             <CardStyle className="cards">
                 <div className="inner">
                     {CardData.map((card) => (
@@ -117,7 +83,10 @@ const CardIndex = () => {
                             <div className="card-wrapper">
                                 <div className="flip-card-inner">
                                     <div className="flip-card-front">
-                                        <img src="/images/Intro-image/card1.png" alt={card.title} />
+                                        <img
+                                            src={`/images/Intro-image/card${card.id}.png`}
+                                            alt={card.title}
+                                        />
                                     </div>
                                     <div className="flip-card-back">
                                         <p

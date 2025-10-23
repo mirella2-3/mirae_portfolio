@@ -1463,6 +1463,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ev-emitter@npm:^1.0.0":
+  version: 1.1.1
+  resolution: "ev-emitter@npm:1.1.1"
+  checksum: 10c0/332dcb444de2b1d81035fb22a10dd33926311baa7ea6fc24f1de7b60c6eff5b7e133611000fce740471f0c8f95259d3914d49b4201af2d85a51f0aeb8cb1ceda
+  languageName: node
+  linkType: hard
+
 "exponential-backoff@npm:^3.1.1":
   version: 3.1.3
   resolution: "exponential-backoff@npm:3.1.3"
@@ -1687,6 +1694,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"imagesloaded@npm:^4.1.4":
+  version: 4.1.4
+  resolution: "imagesloaded@npm:4.1.4"
+  dependencies:
+    ev-emitter: "npm:^1.0.0"
+  checksum: 10c0/06d5195f9df7f83f14fc87c7ff44cd734884e7269f9142a5cabe4cb3e01a6dc77002411ce2e28717d43538de577504bf4e1bfb1d1efba22c38783bbe169a7342
+  languageName: node
+  linkType: hard
+
 "import-fresh@npm:^3.2.1":
   version: 3.3.1
   resolution: "import-fresh@npm:3.3.1"
@@ -1824,6 +1840,24 @@ __metadata:
   dependencies:
     json-buffer: "npm:3.0.1"
   checksum: 10c0/aa52f3c5e18e16bb6324876bb8b59dd02acf782a4b789c7b2ae21107fab95fab3890ed448d4f8dba80ce05391eeac4bfabb4f02a20221342982f806fa2cf271e
+  languageName: node
+  linkType: hard
+
+"lenis@npm:^1.3.11":
+  version: 1.3.11
+  resolution: "lenis@npm:1.3.11"
+  peerDependencies:
+    "@nuxt/kit": ">=3.0.0"
+    react: ">=17.0.0"
+    vue: ">=3.0.0"
+  peerDependenciesMeta:
+    "@nuxt/kit":
+      optional: true
+    react:
+      optional: true
+    vue:
+      optional: true
+  checksum: 10c0/394e17dd39944d7842bf72668f0cfe8088cd0aa39fcf4fbe96f4b5fee89acd56380aceeaf16d21c57faed08b96d340a7fc6bdf8e3fa5ad4b88c2416f8134b64e
   languageName: node
   linkType: hard
 
@@ -1996,8 +2030,10 @@ __metadata:
     eslint-plugin-react-refresh: "npm:^0.4.22"
     globals: "npm:^16.4.0"
     gsap: "npm:^3.13.0"
+    lenis: "npm:^1.3.11"
     react: "npm:^19.1.1"
     react-dom: "npm:^19.1.1"
+    react-flickity-component: "npm:^5.0.0"
     react-router-dom: "npm:^7.9.4"
     styled-components: "npm:^6.1.19"
     styled-reset: "npm:^5.0.0"
@@ -2037,8 +2073,8 @@ __metadata:
   linkType: hard
 
 "node-gyp@npm:latest":
-  version: 11.4.2
-  resolution: "node-gyp@npm:11.4.2"
+  version: 11.5.0
+  resolution: "node-gyp@npm:11.5.0"
   dependencies:
     env-paths: "npm:^2.2.0"
     exponential-backoff: "npm:^3.1.1"
@@ -2052,7 +2088,7 @@ __metadata:
     which: "npm:^5.0.0"
   bin:
     node-gyp: bin/node-gyp.js
-  checksum: 10c0/0bfd3e96770ed70f07798d881dd37b4267708966d868a0e585986baac487d9cf5831285579fd629a83dc4e434f53e6416ce301097f2ee464cb74d377e4d8bdbe
+  checksum: 10c0/31ff49586991b38287bb15c3d529dd689cfc32f992eed9e6997b9d712d5d21fe818a8b1bbfe3b76a7e33765c20210c5713212f4aa329306a615b87d8a786da3a
   languageName: node
   linkType: hard
 
@@ -2235,6 +2271,19 @@ __metadata:
   peerDependencies:
     react: ^19.2.0
   checksum: 10c0/fa2cae05248d01288e91523b590ce4e7635b1e13f1344e225f850d722a8da037bf0782f63b1c1d46353334e0c696909b82e582f8cad607948fde6f7646cc18d9
+  languageName: node
+  linkType: hard
+
+"react-flickity-component@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "react-flickity-component@npm:5.0.0"
+  dependencies:
+    imagesloaded: "npm:^4.1.4"
+  peerDependencies:
+    flickity: ^2.2.1
+    react: ^19.0.0
+    react-dom: ^19.0.0
+  checksum: 10c0/faba865f39f100f0dbf894dcb93b16251a6cb8f94f056a8e0959fcd6bba4d18fff46a03dcb0845f78c0e1a4720d19b51654e3a3d166dc871bd3d33a28d7640de
   languageName: node
   linkType: hard
 

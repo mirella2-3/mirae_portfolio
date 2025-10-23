@@ -75,7 +75,6 @@ const ProfilePage = () => {
                         start: 'bottom center',
 
                         toggleActions: 'play none none reverse',
-                        markers: true,
                     },
                 }
             );
