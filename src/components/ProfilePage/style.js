@@ -4,7 +4,7 @@ export const ProfilePageStyle = styled.div`
     background: #f2efeb;
     position: relative;
     width: 100vw;
-    height: 1080px;
+    /* height: 1080px; */
     padding: 160px 0;
     /* border: 1px solid #000; */
 

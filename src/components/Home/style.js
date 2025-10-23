@@ -8,18 +8,6 @@ export const IntroStyle = styled.div`
         font-weight: 500;
     }
 
-    p {
-        font-size: 1.1rem;
-        font-weight: 500;
-    }
-
-    span {
-        text-transform: uppercase;
-        font-family: 'DM Mono';
-        font-size: 0.75rem;
-        font-weight: 500;
-    }
-
     section {
         position: relative;
         width: 100vw;
@@ -31,6 +19,10 @@ export const IntroStyle = styled.div`
     /* con1 */
     .con1 {
         background-color: #f9f4eb;
+        background-image: url(/images/Intro-image/Index02.png);
+        background-size: cover;
+        background-position: 0 0;
+        background-repeat: no-repeat;
         color: #000000;
         display: flex;
         justify-content: center;
@@ -57,7 +49,7 @@ export const IntroStyle = styled.div`
                 position: relative;
                 aspect-ratio: 5 / 7;
                 padding: 0.75rem;
-                border-radius: 0.5rem;
+                /* border-radius: 0.5rem; */
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
@@ -73,18 +65,27 @@ export const IntroStyle = styled.div`
                 }
 
                 &#con1-card-1 {
-                    background-color: #e5d9f6;
+                    background-image: url(/images/Intro-image/card1.png);
+                    background-size: cover;
+                    background-position: 0 0;
+                    background-repeat: no-repeat;
                     transform-origin: top right;
                     z-index: 2;
                 }
 
                 &#con1-card-2 {
-                    background-color: #ffd2f3;
+                    background-image: url(/images/Intro-image/card2.png);
+                    background-size: cover;
+                    background-position: 0 0;
+                    background-repeat: no-repeat;
                     z-index: 1;
                 }
 
                 &#con1-card-3 {
-                    background-color: #fcdca6;
+                    background-image: url(/images/Intro-image/card4.png);
+                    background-size: cover;
+                    background-position: 0 0;
+                    background-repeat: no-repeat;
                     transform-origin: top left;
                     z-index: 0;
                 }
@@ -92,19 +93,17 @@ export const IntroStyle = styled.div`
         }
     }
 
-    /* con2 + con4 */
     .con2,
     .con4 {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #000000;
+        background-color: #24190f;
         color: #f9f4eb;
     }
 
-    /* con3 */
     .con3 {
-        padding: 8rem 2rem;
+        /* padding: 8rem 2rem; */
 
         .con3-header {
             position: relative;
@@ -115,9 +114,6 @@ export const IntroStyle = styled.div`
         }
     }
 
-    /* ===========================
-   CARDS SECTION
-   =========================== */
     .cards {
         position: fixed;
         top: 0;
@@ -127,11 +123,15 @@ export const IntroStyle = styled.div`
         display: flex;
         justify-content: center;
         z-index: -1;
-        background-color: #f9f4eb;
+        background: #362718;
+        background-image: url(/images/Intro-image/Index02.png);
+        background-size: cover;
+        background-position: 0 0;
+        background-repeat: no-repeat;
 
         .cards-container {
             position: relative;
-            width: 75%;
+            width: 60%;
             height: 100%;
             margin-top: 4rem;
             display: flex;
@@ -178,12 +178,6 @@ export const IntroStyle = styled.div`
                         flex-direction: column;
                         justify-content: space-between;
                         align-items: center;
-
-                        .card-title {
-                            display: flex;
-                            justify-content: space-between;
-                            width: 100%;
-                        }
                     }
 
                     .flip-card-back {
@@ -192,24 +186,42 @@ export const IntroStyle = styled.div`
                         flex-direction: column;
                         justify-content: space-between;
                         gap: 2rem;
-                        background-color: #ffffff;
                         transform: rotateY(180deg);
-
-                        .card-copy {
-                            width: 100%;
-                            height: 100%;
+                        background-image: url(/images/Intro-image/card-back.png);
+                        background-size: cover;
+                        background-position: 0 0;
+                        background-repeat: no-repeat;
+                        .card-title {
                             display: flex;
                             flex-direction: column;
-                            gap: 0.5rem;
+                            /* justify-content: center; */
+                            align-items: center;
+                            text-align: center;
+                            width: 100%;
+                            height: 100%;
+                            position: relative;
 
                             p {
-                                flex: 1;
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-                                font-size: 1rem;
-                                background-color: #f0ece5;
-                                border-radius: 0.25rem;
+                                color: #d1c5bc;
+                                display: block;
+                                font-family: 'EB Garamond';
+                                font-size: 38px;
+                                font-style: normal;
+                                font-weight: 600;
+                                line-height: normal;
+                                display: block;
+                                margin: 0;
+                                margin-top: 150px;
+                            }
+                            span {
+                                display: block;
+                                color: var(--Brown-brown-400, #81614e);
+                                font-family: 'EB Garamond';
+                                font-size: 40px;
+                                font-style: normal;
+                                font-weight: 600;
+                                line-height: 124%; /* 49.6px */
+                                margin-top: 25px;
                             }
                         }
                     }
@@ -217,7 +229,10 @@ export const IntroStyle = styled.div`
 
                 &#card-1 {
                     .flip-card-front {
-                        background-color: #e5d9f6;
+                        background-image: url(/images/Intro-image/card1.png);
+                        background-size: cover;
+                        background-position: 0 0;
+                        background-repeat: no-repeat;
                     }
                     transform: translateX(100%) translateY(-100%) rotate(-5deg) scale(0.25);
                     z-index: 2;
@@ -228,7 +243,10 @@ export const IntroStyle = styled.div`
 
                 &#card-2 {
                     .flip-card-front {
-                        background-color: #ffd2f3;
+                        background-image: url(/images/Intro-image/card2.png);
+                        background-size: cover;
+                        background-position: 0 0;
+                        background-repeat: no-repeat;
                     }
                     transform: translateX(0%) translateY(-100%) rotate(0deg) scale(0.25);
                     z-index: 1;
@@ -239,7 +257,10 @@ export const IntroStyle = styled.div`
 
                 &#card-3 {
                     .flip-card-front {
-                        background-color: #fcdca6;
+                        background-image: url(/images/Intro-image/card4.png);
+                        background-size: cover;
+                        background-position: 0 0;
+                        background-repeat: no-repeat;
                     }
                     transform: translateX(-100%) translateY(-100%) rotate(5deg) scale(0.25);
                     z-index: 0;
@@ -251,7 +272,6 @@ export const IntroStyle = styled.div`
         }
     }
 
-    /* Floating animation */
     @keyframes floating {
         0% {
             transform: translate(-50%, -50%);
@@ -264,114 +284,19 @@ export const IntroStyle = styled.div`
         }
     }
 
-    /* ===========================
-   MOBILE HIDDEN
-   =========================== */
     .mobile-cards {
         display: none;
     }
 `;
-// export const CardStyle = styled.div`
-//     overflow: hidden;
-//     position: relative;
-//     width: 100vw;
-//     height: 150vh;
-//     background: #000;
-//     background-image: url('/images/Intro-image/Index.png');
-//     background-position: 0 0;
-//     background-repeat: no-repeat;
-//     background-size: contain;
+export const ntro2 = styled.div`
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 
-//     .inner {
-//         position: relative;
-//         height: 100vh;
-//     }
-//     .card {
-//         position: absolute;
-//         top: 50%;
-//         left: 50%;
-//         transform: translate(-50%, -50%);
-//         width: 300px;
-//         height: 408px;
-//         width: 282px;
-//         height: 376px;
-//         perspective: 1000px;
-//         z-index: 20;
+    background-image: url(/images/endPhoto.png);
 
-//         p {
-//             position: absolute;
-//             top: 50%;
-//             left: 60%;
-//             transform: translate(-50%, -50%);
-//             text-align: center;
-//             font-size: 24px;
-//             font-weight: 500;
-//         }
-//     }
-
-//     .card-wrapper {
-//         position: absolute;
-//         top: 50%;
-//         left: 50%;
-//         transform: translate(-50%, -50%);
-//         width: 100%;
-//         height: 100%;
-//         animation: floating 3s infinite ease-in-out;
-//     }
-
-//     #card-1 .card-wrapper {
-//         animation-delay: 0s;
-//     }
-//     #card-2 .card-wrapper {
-//         animation-delay: 0.2s;
-//     }
-//     #card-3 .card-wrapper {
-//         animation-delay: 0.4s;
-//     }
-//     #card-4 .card-wrapper {
-//         animation-delay: 0.6s;
-//     }
-
-//     .flip-card-inner {
-//         position: relative;
-//         width: 100%;
-//         height: 100%;
-
-//         transform-style: preserve-3d;
-//     }
-
-//     .flip-card-front,
-//     .flip-card-back {
-//         position: absolute;
-//         width: 100%;
-//         height: 100%;
-//         backface-visibility: hidden;
-//     }
-
-//     .flip-card-back {
-//         background-image: url('/images/Intro-image/card-back.png');
-//         transform: rotateY(180deg);
-//         p {
-//             font-family: 'EB Garamond';
-//             padding-bottom: 20px;
-//             span {
-//                 display: block;
-//                 margin-bottom: 10px;
-//                 opacity: 0.5;
-//                 font-weight: 600;
-//             }
-//         }
-//     }
-
-//     @keyframes floating {
-//         0% {
-//             transform: translate(-50%, -50%);
-//         }
-//         50% {
-//             transform: translate(-50%, -60%);
-//         }
-//         100% {
-//             transform: translate(-50%, -50%);
-//         }
-//     }
-// `;
+    canvas {
+        width: 100%;
+        height: 100%;
+    }
+`;

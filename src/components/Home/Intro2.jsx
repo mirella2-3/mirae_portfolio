@@ -1,329 +1,115 @@
-import { useEffect } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Lenis from 'lenis';
-import { IntroStyle } from './style';
+import React, { useRef, useState, useEffect } from 'react';
 
-const Intro2 = () => {
-    useEffect(() => {
-        gsap.registerPlugin(ScrollTrigger);
+const RippleEffectCanvas = () => {
+    const canvasRef = useRef(null); // 캔버스 참조
+    const [circleCoord, setCircleCoord] = useState([]);
+    const [stay, setStay] = useState(0);
+    const [auto, setAuto] = useState(true);
+    const [mX, setMX] = useState(window.innerWidth / 2);
+    const [mY, setMY] = useState(window.innerHeight / 2);
+    const [frame, setFrame] = useState(0);
+    const [dir, setDir] = useState(1);
+    const [dirY, setDirY] = useState(1);
 
-        const lenis = new Lenis();
-        lenis.on('scroll', ScrollTrigger.update);
-        gsap.ticker.add((time) => lenis.raf(time * 1000));
-        gsap.ticker.lagSmoothing(0);
+    // 마우스 이벤트 핸들러
+    const handleMouseMove = (e) => {
+        setStay(0);
+        setAuto(false);
+        setMX(e.pageX - e.target.offsetLeft);
+        setMY(e.pageY - e.target.offsetTop);
+    };
 
-        const smoothStep = (p) => p * p * (3 - 2 * p);
+    // 캔버스 렌더링
+    const drawCircle = (context, mx, my, radius, opacity) => {
+        context.beginPath();
+        context.arc(mx, my, radius, 0, 2 * Math.PI, false);
+        context.lineWidth = 3;
+        context.strokeStyle = `rgba(100, 149, 237, ${opacity})`;
+        context.stroke();
+    };
 
-        if (window.innerWidth > 1000) {
-            // --- Section con1 ---
-            ScrollTrigger.create({
-                trigger: '.con1',
-                start: 'top top',
-                end: '75% top',
-                scrub: 1,
-                onUpdate: (self) => {
-                    const progress = self.progress;
+    // 애니메이션 렌더링
+    const render = () => {
+        const canvas = canvasRef.current;
+        const context = canvas.getContext('2d');
+        context.clearRect(0, 0, context.canvas.width, context.canvas.height); // 캔버스 클리어
 
-                    const con1CardsContainerOpacity = gsap.utils.interpolate(
-                        1,
-                        0.5,
-                        smoothStep(progress)
-                    );
-                    gsap.set('.con1-cards', { opacity: con1CardsContainerOpacity });
-
-                    ['#con1-card-1', '#con1-card-2', '#con1-card-3', '#con1-card-4'].forEach(
-                        (cardId, index) => {
-                            const delay = index * 0.9;
-                            const cardProgress = gsap.utils.clamp(
-                                0,
-                                1,
-                                (progress - delay * 0.1) / (1 - delay * 0.1)
-                            );
-
-                            const y = gsap.utils.interpolate(
-                                '0%',
-                                '350%',
-                                smoothStep(cardProgress)
-                            );
-                            const scale = gsap.utils.interpolate(1, 0.75, smoothStep(cardProgress));
-
-                            let x = '0%';
-                            let rotation = 0;
-                            if (index === 0) {
-                                x = gsap.utils.interpolate('0%', '90%', smoothStep(cardProgress));
-                                rotation = gsap.utils.interpolate(0, -15, smoothStep(cardProgress));
-                            } else if (index === 2) {
-                                x = gsap.utils.interpolate('0%', '-90%', smoothStep(cardProgress));
-                                rotation = gsap.utils.interpolate(0, 15, smoothStep(cardProgress));
-                            } else if (index === 3) {
-                                x = gsap.utils.interpolate('0%', '0%', smoothStep(cardProgress));
-                                rotation = gsap.utils.interpolate(0, 10, smoothStep(cardProgress));
-                            }
-
-                            gsap.set(cardId, { y, x, rotation, scale });
-                        }
-                    );
-                },
-            });
-
-            // --- Section con3 pinning ---
-            ScrollTrigger.create({
-                trigger: '.con3',
-                start: 'top top',
-                end: `+=${window.innerHeight * 4}px`,
-                pin: '.con3',
-                pinSpacing: true,
-            });
-
-            // --- con3 position management ---
-            ScrollTrigger.create({
-                trigger: '.con3',
-                start: 'top top',
-                end: `+=${window.innerHeight * 4}px`,
-                onLeave: () => {
-                    const con3Section = document.querySelector('.con3');
-                    const con3Rect = con3Section.getBoundingClientRect();
-                    const con3Top = window.pageYOffset + con3Rect.top;
-
-                    gsap.set('.cards', {
-                        position: 'absolute',
-                        top: con3Top,
-                        left: 0,
-                        width: '100vw',
-                        height: '100vh',
-                    });
-                },
-                onEnterBack: () => {
-                    gsap.set('.cards', {
-                        position: 'fixed',
-                        top: 0,
-                        left: 0,
-                        width: '100vw',
-                        height: '100vh',
-                    });
-                },
-            });
-
-            // --- con3 scroll animation ---
-            ScrollTrigger.create({
-                trigger: '.con3',
-                start: 'top bottom',
-                end: `+=${window.innerHeight * 4}`,
-                scrub: 1,
-                onUpdate: (self) => {
-                    const progress = self.progress;
-
-                    const headerProgress = gsap.utils.clamp(0, 1, progress / 0.9);
-                    const headerY = gsap.utils.interpolate(
-                        '400%',
-                        '0%',
-                        smoothStep(headerProgress)
-                    );
-                    gsap.set('.con3-header', { y: headerY });
-
-                    ['#card-1', '#card-2', '#card-3', '#card-4'].forEach((cardId, index) => {
-                        const delay = index * 0.5;
-                        const cardProgress = gsap.utils.clamp(
-                            0,
-                            1,
-                            (progress - delay * 0.1) / (0.9 - delay * 0.1)
-                        );
-
-                        const innerCard = document.querySelector(`${cardId} .flip-card-inner`);
-                        let y, scale, opacity, x, rotate, rotationY;
-
-                        if (cardProgress < 0.4) {
-                            const normalizedProgress = cardProgress / 0.4;
-                            y = gsap.utils.interpolate(
-                                '-100%',
-                                '50%',
-                                smoothStep(normalizedProgress)
-                            );
-                            scale = gsap.utils.interpolate(
-                                0.25,
-                                0.75,
-                                smoothStep(normalizedProgress)
-                            );
-                            opacity = smoothStep(normalizedProgress);
-                        } else if (cardProgress < 0.6) {
-                            const normalizedProgress = (cardProgress - 0.4) / 0.2;
-                            y = gsap.utils.interpolate('50%', '0%', smoothStep(normalizedProgress));
-                            scale = gsap.utils.interpolate(0.75, 1, smoothStep(normalizedProgress));
-                            opacity = 1;
-                        } else {
-                            y = '0%';
-                            scale = 1;
-                            opacity = 1;
-                        }
-
-                        if (cardProgress < 0.6) {
-                            x =
-                                index === 0
-                                    ? '100%'
-                                    : index === 1
-                                    ? '0%'
-                                    : index === 2
-                                    ? '-100%'
-                                    : '50%';
-                            rotate = index === 0 ? -5 : index === 1 ? 0 : index === 2 ? 5 : -10;
-                            rotationY = 0;
-                        } else if (cardProgress < 1) {
-                            const normalizedProgress = (cardProgress - 0.6) / 0.4;
-                            x = gsap.utils.interpolate(
-                                index === 0
-                                    ? '100%'
-                                    : index === 1
-                                    ? '0%'
-                                    : index === 2
-                                    ? '-100%'
-                                    : '50%',
-                                '0%',
-                                smoothStep(normalizedProgress)
-                            );
-                            rotate = gsap.utils.interpolate(
-                                index === 0 ? -5 : index === 1 ? 0 : index === 2 ? 5 : -10,
-                                0,
-                                smoothStep(normalizedProgress)
-                            );
-                            rotationY = smoothStep(normalizedProgress) * 180;
-                        } else {
-                            x = '0%';
-                            rotate = 0;
-                            rotationY = 180;
-                        }
-
-                        gsap.set(cardId, { opacity, y, x, rotate, scale });
-                        gsap.set(innerCard, { rotationY });
-                    });
-                },
-            });
+        const currentFrame = frame + 1;
+        if (
+            currentFrame > 5 &&
+            currentFrame % 2 === 0 &&
+            circleCoord[circleCoord.length - 1] &&
+            circleCoord[circleCoord.length - 1][0] === mX &&
+            circleCoord[circleCoord.length - 1][1] === mY
+        ) {
+            setStay(stay + 1);
+            if (stay > 50) setAuto(true);
         }
 
+        if (!auto) {
+            setCircleCoord([...circleCoord, [mX, mY, currentFrame]]);
+        } else {
+            setStay((prevStay) => (prevStay + 1) % 400);
+            if (stay % 93 === 0) {
+                setDir(-dir);
+                setDirY(-dirY);
+            }
+
+            setCircleCoord([
+                ...circleCoord,
+                [
+                    mX + dir * (Math.random() * 3 - 100 + stay),
+                    mY + dirY * (Math.random() * 3 - 100 + stay),
+                    currentFrame,
+                ],
+            ]);
+        }
+
+        if (circleCoord.length > 100) circleCoord.shift();
+
+        // 원을 그리기
+        circleCoord.forEach(([x, y, frameDelta]) => {
+            const base = currentFrame - frameDelta + 15;
+            drawCircle(context, x + base, y + base / 2, 3 * base + base / 10, 1.3 / base);
+            drawCircle(context, x, y, 1.5 * base + base / 10, 2.3 / base);
+            drawCircle(context, x, y, 2 * base + base / 20, 2.5 / base);
+        });
+
+        setFrame(currentFrame);
+        requestAnimationFrame(render); // 계속해서 애니메이션 호출
+    };
+
+    // useEffect를 사용하여 컴포넌트 마운트 시 이벤트 리스너 설정 및 애니메이션 시작
+    useEffect(() => {
+        const canvas = canvasRef.current;
+        canvas.addEventListener('mousemove', handleMouseMove);
+        canvas.addEventListener('touchmove', handleMouseMove);
+
+        // 애니메이션 시작
+        render();
+
+        // 컴포넌트 언마운트 시 이벤트 리스너 정리
         return () => {
-            ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-            gsap.ticker.remove((time) => lenis.raf(time * 1000));
+            canvas.removeEventListener('mousemove', handleMouseMove);
+            canvas.removeEventListener('touchmove', handleMouseMove);
         };
-    }, []);
+    }, [circleCoord, stay, auto, mX, mY, dir, dirY, frame]);
 
     return (
-        <IntroStyle className="portfolio">
-            <section className="con1">
-                <h2>
-                    Creative
-                    <br />
-                    Frontend Portfolio
-                </h2>
-                <div className="con1-cards">
-                    <div className="card" id="con1-card-1">
-                        <div className="card-title">
-                            <span>Plan</span>
-                            <span>01</span>
-                        </div>
-                    </div>
-                    <div className="card" id="con1-card-2">
-                        <div className="card-title">
-                            <span>Design</span>
-                            <span>02</span>
-                        </div>
-                    </div>
-                    <div className="card" id="con1-card-3">
-                        <div className="card-title">
-                            <span>Develop</span>
-                            <span>03</span>
-                        </div>
-                    </div>
-                    <div className="card" id="con1-card-4">
-                        <div className="card-title">
-                            <span>Deploy</span>
-                            <span>04</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section className="con2">
-                <h1>Not just websites, but interactive stories</h1>
-            </section>
-
-            <section className="con3">
-                <div className="con3-header">
-                    <h1>More than websites, immersive experiences.</h1>
-                </div>
-            </section>
-
-            <section className="cards">
-                <div className="cards-container">
-                    {['Plan', 'Design', 'Develop', 'Deploy'].map((title, idx) => (
-                        <div className="card" id={`card-${idx + 1}`} key={idx}>
-                            <div className="card-wrapper">
-                                <div className="flip-card-inner">
-                                    <div className="flip-card-front">
-                                        <div className="card-title">
-                                            <span>{title}</span>
-                                            <span>{`0${idx + 1}`}</span>
-                                        </div>
-                                    </div>
-                                    <div className="flip-card-back">
-                                        <div className="card-title">
-                                            <span>{title}</span>
-                                            <span>{`0${idx + 1}`}</span>
-                                        </div>
-                                        <div className="card-copy">
-                                            {idx === 0 && (
-                                                <>
-                                                    <p>Requirements Check</p>
-                                                    <p>User Flow 이해</p>
-                                                    <p>Site Map 분석</p>
-                                                    <p>Accessibility 고려</p>
-                                                    <p>Responsive Strategy</p>
-                                                    <p>Publishing Guide</p>
-                                                </>
-                                            )}
-                                            {idx === 1 && (
-                                                <>
-                                                    <p>Wireframes</p>
-                                                    <p>UI Kits</p>
-                                                    <p>Prototypes</p>
-                                                    <p>Visual Style</p>
-                                                    <p>Interaction</p>
-                                                    <p>Design QA</p>
-                                                </>
-                                            )}
-                                            {idx === 2 && (
-                                                <>
-                                                    <p>HTML/CSS/JS</p>
-                                                    <p>CMS Build</p>
-                                                    <p>GSAP Motion</p>
-                                                    <p>Responsive</p>
-                                                    <p>Optimization</p>
-                                                    <p>Launch</p>
-                                                </>
-                                            )}
-                                            {idx === 3 && (
-                                                <>
-                                                    <p>Server Setup</p>
-                                                    <p>Domain & DNS</p>
-                                                    <p>SEO Optimization</p>
-                                                    <p>Performance Check</p>
-                                                    <p>Security Review</p>
-                                                    <p>Deploy & Monitor</p>
-                                                </>
-                                            )}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </section>
-
-            <section className="con4">
-                <h1>The Story of My Code Continues</h1>
-            </section>
-        </IntroStyle>
+        <div>
+            <div id="debug">
+                {mX} {mY}
+            </div>
+            <div id="canvasDiv">
+                <canvas
+                    ref={canvasRef}
+                    width={window.innerWidth}
+                    height={window.innerHeight}
+                    style={{ position: 'absolute', top: 0, left: 0 }}
+                />
+            </div>
+        </div>
     );
 };
 
-export default Intro2;
+export default RippleEffectCanvas;

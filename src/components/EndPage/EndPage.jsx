@@ -12,7 +12,7 @@ const EndPage = () => {
                         <img src="/images/endText.png" alt="" />
                     </p>
 
-                    <span>내 작품이 커피 향처럼 오래 머물기를 바랍니다.</span>
+                    <h1>내 작품이 커피 향처럼 오래 머물기를 바랍니다.</h1>
                     <h5>© 2025 Kangmiseon. All rights reserved.</h5>
                 </div>
             </div>

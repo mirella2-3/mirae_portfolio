@@ -1,5 +1,163 @@
 import styled from 'styled-components';
 
+export const PeopleStyle = styled.div`
+    h1 {
+        text-transform: uppercase;
+        font-size: 6rem;
+        line-height: 0.85;
+        letter-spacing: -0.02rem;
+        color: #cac6c2;
+        font-size: 40px;
+        font-family: 'EB Garamond';
+        font-weight: 600;
+        padding-top: 297px;
+        padding-bottom: 160px;
+    }
+
+    // 이미지 스타일
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    // 섹션 스타일
+    section {
+        position: relative;
+        width: 100vw;
+        height: 100svh;
+        background-color: #362718;
+        color: #fff;
+        overflow: hidden;
+
+        .intro,
+        .outro {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 50%;
+            z-index: 1;
+            color: #cac6c2;
+            font-size: 16px;
+            font-family: 'EB Garamond';
+            padding-top: 297px;
+            padding-bottom: 160px;
+            p {
+                width: 109px;
+                height: 109px;
+                flex-shrink: 0;
+                aspect-ratio: 1/1;
+                position: absolute;
+                top: 63%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                z-index: 0;
+            }
+            h1 {
+                position: relative;
+                z-index: 1;
+            }
+        }
+
+        .spotlight {
+            background-color: #362718;
+        }
+
+        .spotlight-images {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 300svh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transform: translateY(5%);
+            will-change: transform;
+        }
+
+        .row {
+            width: 100%;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+
+            .img {
+                flex: 1;
+                aspect-ratio: 5/7;
+                overflow: hidden;
+
+                img {
+                    opacity: 0.5;
+                    filter: saturate(0);
+                }
+            }
+        }
+
+        .mask-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100svh;
+            -webkit-mask: url(../../assets/images/mask1.svg) center/contain no-repeat;
+            mask: url(../../assets/images/mask1.svg) center/contain no-repeat;
+            overflow: hidden;
+            -webkit-mask-size: 0%;
+            mask-size: 0%;
+            z-index: 10;
+
+            .mask-img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+    text-align: center;
+    padding-top: 315px;
+    background-image: url(/images/endBg.png);
+    background-position: 0, 0;
+    background-repeat: no-repeat;
+    position: relative;
+
+    .bg {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        mix-blend-mode: multiply;
+        img {
+        }
+    }
+    .text-box {
+        padding-top: 163px;
+        position: relative;
+        z-index: 1;
+
+        span {
+            color: #cac6c2;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 130%;
+        }
+        h1 {
+            color: #cac6c2;
+            font-size: 16px;
+            font-family: 'EB Garamond';
+            padding-top: 297px;
+            padding-bottom: 160px;
+        }
+    }
+`;
 export const AboutMeStyle = styled.div`
     width: 100vw;
     background-image: url(/images/Aboutme-image/1_Background.png);
@@ -51,10 +209,10 @@ export const AboutMeStyle = styled.div`
                 h3 {
                     color: var(--Brown-brown-50, #f2efeb);
                     text-align: right;
-                    font-family: 'Garamond';
+                    font-family: 'EB Garamond';
                     font-size: 40px;
                     font-style: normal;
-                    font-weight: 700;
+                    font-weight: 600;
                     line-height: normal;
                     margin-bottom: 16px;
                 }

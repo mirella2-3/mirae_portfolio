@@ -215,42 +215,10 @@ const Intro = () => {
     return (
         <IntroStyle className="portfolio">
             <section className="con1">
-                <h2>
-                    Creative
-                    <br />
-                    Frontend Portfolio
-                </h2>
                 <div className="con1-cards">
-                    <div className="card" id="con1-card-1">
-                        <div className="card-title">
-                            <span>Plan</span>
-                            <span>01</span>
-                        </div>
-                        <div className="card-title">
-                            <span>01</span>
-                            <span>Plan</span>
-                        </div>
-                    </div>
-                    <div className="card" id="con1-card-2">
-                        <div className="card-title">
-                            <span>Design</span>
-                            <span>02</span>
-                        </div>
-                        <div className="card-title">
-                            <span>02</span>
-                            <span>Design</span>
-                        </div>
-                    </div>
-                    <div className="card" id="con1-card-3">
-                        <div className="card-title">
-                            <span>Develop</span>
-                            <span>03</span>
-                        </div>
-                        <div className="card-title">
-                            <span>03</span>
-                            <span>Develop</span>
-                        </div>
-                    </div>
+                    <div className="card" id="con1-card-1"></div>
+                    <div className="card" id="con1-card-2"></div>
+                    <div className="card" id="con1-card-3"></div>
                 </div>
             </section>
 
@@ -258,67 +226,18 @@ const Intro = () => {
                 <h1>Not just websites, but interactive stories</h1>
             </section>
 
-            <section className="con3">
-                <div className="con3-header">
-                    <h1>More than websites, immersive experiences.</h1>
-                </div>
-            </section>
+            <section className="con3"></section>
 
             <section className="cards">
                 <div className="cards-container">
-                    {['Plan', 'Design', 'Develop'].map((title, idx) => (
+                    {['Profile ', 'Projects', 'About Me'].map((title, idx) => (
                         <div className="card" id={`card-${idx + 1}`} key={idx}>
                             <div className="card-wrapper">
                                 <div className="flip-card-inner">
-                                    <div className="flip-card-front">
-                                        <div className="card-title">
-                                            <span>{title}</span>
-                                            <span>{`0${idx + 1}`}</span>
-                                        </div>
-                                        <div className="card-title">
-                                            <span>{`0${idx + 1}`}</span>
-                                            <span>{title}</span>
-                                        </div>
-                                    </div>
+                                    <div className="flip-card-front"></div>
                                     <div className="flip-card-back">
                                         <div className="card-title">
-                                            <span>{title}</span>
-                                            <span>{`0${idx + 1}`}</span>
-                                        </div>
-                                        <div className="card-copy">
-                                            {idx === 0 && (
-                                                <>
-                                                    <p>Requirements Check</p>
-                                                    <p>User Flow 이해</p>
-                                                    <p>Site Map 분석</p>
-                                                    <p>Accessibility 고려</p>
-                                                    <p>Responsive Strategy</p>
-                                                    <p>Publishing Guide</p>
-                                                </>
-                                            )}
-                                            {idx === 1 && (
-                                                <>
-                                                    <p>Wireframes</p>
-                                                    <p>UI Kits</p>
-                                                    <p>Prototypes</p>
-                                                    <p>Visual Style</p>
-                                                    <p>Interaction</p>
-                                                    <p>Design QA</p>
-                                                </>
-                                            )}
-                                            {idx === 2 && (
-                                                <>
-                                                    <p>HTML/CSS/JS</p>
-                                                    <p>CMS Build</p>
-                                                    <p>GSAP Motion</p>
-                                                    <p>Responsive</p>
-                                                    <p>Optimization</p>
-                                                    <p>Launch</p>
-                                                </>
-                                            )}
-                                        </div>
-                                        <div className="card-title">
-                                            <span>{`0${idx + 1}`}</span>
+                                            <p>{`0${idx + 1}`}</p>
                                             <span>{title}</span>
                                         </div>
                                     </div>
@@ -327,10 +246,6 @@ const Intro = () => {
                         </div>
                     ))}
                 </div>
-            </section>
-
-            <section className="con4">
-                <h1>The Story of My Code Continues</h1>
             </section>
         </IntroStyle>
     );
