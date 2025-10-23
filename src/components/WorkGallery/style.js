@@ -115,6 +115,18 @@ export const WorkGalleryStyle = styled.div`
                         font-style: normal;
                         font-weight: 700;
                         line-height: normal;
+                        margin-bottom: 0;
+                    }
+                    div {
+                        button {
+                            background: #cfc0acff;
+                            color: #fff;
+                            font-weight: 300;
+                            border: none;
+                            font-size: 12px;
+                            border-radius: 0;
+                            padding: 5px 10px;
+                        }
                     }
                     p {
                         color: var(--Grey-grey-500, #616161);
@@ -125,6 +137,7 @@ export const WorkGalleryStyle = styled.div`
                         font-weight: 500;
                         line-height: 130%;
                         margin-bottom: 60px;
+                        margin-top: 37px;
                     }
                     button {
                         color: var(--Brown-brown-500, #564438);
@@ -150,8 +163,15 @@ export const WorkGalleryStyle = styled.div`
                 }
                 .right {
                     width: 65%;
-                    border: 1px solid #000;
+                    /* border: 1px solid #000; */
                     height: 506px;
+                    p {
+                    }
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
                 }
             }
         }

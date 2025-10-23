@@ -4,20 +4,39 @@ export const AllStyle = styled.section`
     position: relative;
     width: 100vw;
     height: 100vh;
+    background-image: url('/images/Intro-image/main.png');
+    background-size: contain;
 
-    &.con1 {
-        background-image: url('/images/intro-bg.png');
+    .letter-wrap {
+        width: 100vw;
+
+        .letter-in {
+            position: absolute;
+            left: 50%;
+            top: 50vh;
+            transform: translate(-50%, -50%);
+            bottom: -20vh;
+            z-index: 1;
+        }
+        .letter-out {
+            position: absolute;
+            left: 50%;
+            top: 50vh;
+            transform: translate(-50%, -50%);
+            bottom: -20vh;
+            z-index: 50;
+        }
     }
 `;
 export const CardStyle = styled.div`
     overflow: hidden;
     position: relative;
     width: 100vw;
-    /* height: 300vh; */
-    background-image: url('/images/card-bg.png');
+    height: 300vh;
+    background-image: url('/images/Intro-image/Index.png');
     background-position: 0 0;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
 
     .inner {
         position: relative;
@@ -29,15 +48,16 @@ export const CardStyle = styled.div`
         left: 50%;
         transform: translate(-50%, -50%);
         width: 300px;
-        height: 450px;
-        width: 260px;
+        height: 408px;
+        width: 282px;
         height: 376px;
         perspective: 1000px;
+        z-index: 20;
 
         p {
             position: absolute;
             top: 50%;
-            left: 50%;
+            left: 60%;
             transform: translate(-50%, -50%);
             text-align: center;
             font-size: 24px;
@@ -72,8 +92,7 @@ export const CardStyle = styled.div`
         position: relative;
         width: 100%;
         height: 100%;
-        /* width: 260px;
-        height: 376px; */
+
         transform-style: preserve-3d;
     }
 
@@ -83,11 +102,10 @@ export const CardStyle = styled.div`
         width: 100%;
         height: 100%;
         backface-visibility: hidden;
-        /* border-radius: 0.8em; */
     }
 
     .flip-card-back {
-        background-image: url('images/card-back.png');
+        background-image: url('/images/Intro-image/card-back.png');
         transform: rotateY(180deg);
         p {
             font-family: 'EB Garamond';

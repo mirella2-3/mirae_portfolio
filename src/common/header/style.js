@@ -3,11 +3,17 @@ import styled from 'styled-components';
 export const HeaderStyle = styled.header`
     width: 100vw;
     height: 68px;
-    background: #f8f8f8;
+    background: transparent;
     overflow: visible;
     position: fixed;
     top: 0;
+    left: 0;
     z-index: 9999;
+    transition: background-color 0.3s ease;
+
+    &.scrolled {
+        background-color: rgba(255, 255, 255, 0.5);
+    }
     .inner {
         display: flex;
         justify-content: space-between;

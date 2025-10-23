@@ -5,7 +5,8 @@ export const ProfilePageStyle = styled.div`
     position: relative;
     width: 100vw;
     height: 1080px;
-    border: 1px solid #000;
+    padding: 160px 0;
+    /* border: 1px solid #000; */
 
     .profilePhoto {
         p {
@@ -13,24 +14,17 @@ export const ProfilePageStyle = styled.div`
             top: 300px;
         }
     }
-    @keyframes dash {
-        to {
-            stroke-dashoffset: 1111.0604248046875;
-        }
-    }
+
     .circle {
         position: absolute;
-        left: 67.3vw;
-        bottom: 17.7vh;
-    }
-    path {
-        stroke-dasharray: 1111.0604248046875;
-        stroke-dashoffset: 1111.0604248046875;
-        animation: dash 2s linear forwards;
+        right: 4vw;
+        bottom: -3vh;
     }
 
     .inner {
-        padding: 160px 0;
+        /* margin: 160px 0; */
+        height: 760px;
+        /* border: 1px solid #000; */
         .text-box {
             display: flex;
             flex-direction: column;
@@ -43,17 +37,6 @@ export const ProfilePageStyle = styled.div`
                 text-align: center;
                 font-weight: 600;
             }
-
-            /* @keyframes typing {
-                from {
-                    width: 0;
-                    opacity: 0;
-                }
-                to {
-                    width: 100%;
-                    opacity: 1;
-                }
-            } */
         }
         @keyframes typing {
             0% {
@@ -69,6 +52,10 @@ export const ProfilePageStyle = styled.div`
         }
         .typing-box {
             display: block;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            text-align: right;
 
             .typing-demo,
             .typing-demo2 {
@@ -77,7 +64,6 @@ export const ProfilePageStyle = styled.div`
                 white-space: nowrap;
                 overflow: hidden;
                 color: var(--Black, #060606);
-                text-align: left;
                 font-family: Pretendard;
                 font-size: 32px;
                 font-style: normal;
@@ -86,6 +72,7 @@ export const ProfilePageStyle = styled.div`
                 opacity: 0;
                 animation-fill-mode: forwards;
             }
+
             .typing-demo2 {
                 animation-delay: 2s;
                 strong {

@@ -19,7 +19,6 @@ const CardIndex = () => {
         const positions = [14, 38, 62, 86];
         const rotations = [-15, -7.5, 7.5, 15];
 
-        // pin section
         ScrollTrigger.create({
             trigger: '.cards',
             start: 'top top',
@@ -28,7 +27,6 @@ const CardIndex = () => {
             pinSpacing: true,
         });
 
-        // spread cards
         cards.forEach((card, index) => {
             gsap.to(card, {
                 left: `${positions[index]}%`,
@@ -43,7 +41,6 @@ const CardIndex = () => {
             });
         });
 
-        // rotate / flip
         cards.forEach((card, index) => {
             const frontEl = card.querySelector('.flip-card-front');
             const backEl = card.querySelector('.flip-card-back');
@@ -70,6 +67,29 @@ const CardIndex = () => {
                 },
             });
         });
+        gsap.to('.letter-in', {
+            y: 200, // Move it down by 200px
+            scrollTrigger: {
+                trigger: '.cards',
+                start: 'top 20%', // When the top of the .cards hits the 20% mark of the viewport
+                end: 'top 40%', // Ends when the top reaches 40% of the viewport
+                scrub: true, // Sync with scrolling
+                pin: true, // Keep the letter elements pinned while scrolling
+                anticipatePin: 1, // Smooth pinning
+            },
+        });
+
+        gsap.to('.letter-out', {
+            y: 300, // Move it down by 200px
+            scrollTrigger: {
+                trigger: '.cards',
+                start: 'top 20%', // When the top of the .cards hits the 20% mark of the viewport
+                end: 'top 40%', // Ends when the top reaches 40% of the viewport
+                scrub: true, // Sync with scrolling
+                pin: true, // Keep the letter elements pinned while scrolling
+                anticipatePin: 1, // Smooth pinning
+            },
+        });
 
         return () => {
             ScrollTrigger.getAll().forEach((st) => st.kill());
@@ -80,7 +100,14 @@ const CardIndex = () => {
     return (
         <>
             <AllStyle className="con1">
-                <h1>인트로</h1>
+                <div className="letter-wrap">
+                    <div className="letter-in">
+                        <img src="/images/Intro-image/letter-in.png" alt="" />
+                    </div>
+                    <div className="letter-out">
+                        <img src="/images/Intro-image/letter-out.png" alt="" />
+                    </div>
+                </div>
             </AllStyle>
 
             <CardStyle className="cards">
@@ -90,11 +117,17 @@ const CardIndex = () => {
                             <div className="card-wrapper">
                                 <div className="flip-card-inner">
                                     <div className="flip-card-front">
-                                        <img src="/images/card-front.png" alt={card.title} />
+                                        <img src="/images/Intro-image/card1.png" alt={card.title} />
                                     </div>
                                     <div className="flip-card-back">
-                                        <p style={{ fontSize: 26, color: '#fff', lineHeight: 1.2 }}>
-                                            <span style={{ fontSize: 24, color: '#75273D' }}>
+                                        <p
+                                            style={{
+                                                fontSize: 26,
+                                                color: '#81614E',
+                                                lineHeight: 1.2,
+                                            }}
+                                        >
+                                            <span style={{ fontSize: 24, color: '#d1c5bc' }}>
                                                 0{card.id}
                                             </span>
                                             {card.title}

@@ -160,9 +160,21 @@ const WorkGallery = () => {
                             <ul>
                                 <li className="left">
                                     <h2>{item.title}</h2>
+                                    <div>
+                                        {item.tool.map((toolItem, toolIndex) => (
+                                            <button key={toolIndex}>{toolItem}</button>
+                                        ))}
+                                    </div>
                                     <p>{item.desc}</p>
-                                    <button>Web</button>
-                                    <button>Figma</button>
+                                    <button onClick={() => window.open(item.vercelUrl, '_blank')}>
+                                        Web
+                                    </button>
+                                    <button onClick={() => window.open(item.githubUrl, '_blank')}>
+                                        Github
+                                    </button>
+                                    <button onClick={() => window.open(item.githubUrl, '_blank')}>
+                                        Figma
+                                    </button>
                                 </li>
                                 <li className="right">
                                     <p>

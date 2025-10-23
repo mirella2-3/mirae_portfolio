@@ -25,7 +25,7 @@ const SkillSlide = () => {
 
         tl.current = gsap.to(slider, {
             x: -totalWidth,
-            duration: 60,
+            duration: 240,
 
             repeat: -1,
             modifiers: {

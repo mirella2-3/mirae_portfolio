@@ -1,9 +1,3 @@
-const SkillList = [
-    '/images/Skill-image/Skill-image01.png',
-    '/images/Skill-image/Skill-image01.png',
-    '/images/Skill-image/Skill-image01.png',
-    '/images/Skill-image/Skill-image01.png',
-    '/images/Skill-image/Skill-image01.png',
-];
+const SkillList = ['/images/Skill-image/Skills.png'];
 
 export default SkillList;

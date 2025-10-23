@@ -10,30 +10,30 @@ const SkillPage = () => {
                     <ul className="sub1 edu">
                         <li className="title">Education</li>
                         <li>
-                            경상국립대학교 텍스타일 디자인과 졸업 <span>2012.02 - 2016.02</span>
+                            상명대학교 패션디자인과 졸업 <span>2015.03 - 2020.02</span>
                         </li>
                     </ul>
                     <ul className="sub1 ">
                         <li className="title">Experience</li>
                         <ul className="sub2">
                             <li>
-                                티오피성형외과의원 - 상세페이지&SNS 등 바이럴 이미지 디자인,
-                                인물사진 보정 <span>2020.11 - 2023.11</span>
+                                이젠아카데미 부트캠프 UXUI/프론트엔드 과정
+                                <span>2025.04 - 2025.09</span>
                             </li>
                             <li>
-                                스노우의원 - 상세페이지&SNS 등 바이럴 이미지 디자인, 인물사진 보정
-                                <span>2019.05 - 2020.11</span>
+                                런던 웨스트필드 카페 TisamisU - Supervisor
+                                <span>2023.10 - 2025.02</span>
                             </li>
                             <li>
-                                나다움 미술학원 - 학생 관리&지도, 보호자 상담, 행정 및 운영 관리
-                                <span>2018.01 - 2019.02</span>
+                                화성 엔터테인먼트 - CAD Assistant
+                                <span>2022.10 - 2023.01</span>
                             </li>
                             <li>
-                                신일디앤피 - 카다로그 홍보물 편집 디자인
-                                <span>2017.02 - 2017.03</span>
+                                카페 투썸플레이스 - Senior Manager
+                                <span>2021.08 - 2022.10</span>
                             </li>
                             <li>
-                                영원한미소 미술학원 - 학생 관리&지도 <span>2012.12 - 2014.10</span>
+                                카페 투썸플레이스 - Staff <span>2019.02 - 2020.01</span>
                             </li>
                         </ul>
                     </ul>
@@ -43,19 +43,16 @@ const SkillPage = () => {
                         <li className="title">Certificate</li>
                         <ul className="sub2">
                             <li>
-                                컴퓨터그래픽스운용기능사 <span>2015.10</span>
+                                정보처리기사 (필기) <span>2025.09</span>
                             </li>
                             <li>
-                                GTQ포토샵 1급<span>2015.04</span>
+                                정보처리산업기사 (필기) <span>2025.09</span>
                             </li>
                             <li>
-                                AutoCAD 2급<span>2016.04</span>
+                                SQLD (SQL 개발자)<span>2025.06</span>
                             </li>
                             <li>
-                                운전면허 1종 보통 <span>2017.10</span>
-                            </li>
-                            <li>
-                                JLPT N3 <span>2018.09</span>
+                                운전면허 2종 보통 <span>2019.09</span>
                             </li>
                         </ul>
                     </ul>
