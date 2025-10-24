@@ -9,6 +9,7 @@ import { PeopleStyle } from './style';
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const People = () => {
+    const aboutMeRef = useRef(null);
     const spotlightImagesRef = useRef(null);
     const maskContainerRef = useRef(null);
     const maskImageRef = useRef(null);
@@ -109,7 +110,7 @@ const People = () => {
     }, []);
 
     return (
-        <PeopleStyle id="people">
+        <PeopleStyle id="people" ref={aboutMeRef}>
             <section className="spotlight">
                 <div className="header">
                     <p>
@@ -196,30 +197,26 @@ const People = () => {
                         <div className="img"></div>
                         <div className="img"></div>
                     </div>
-
-                    {/* More rows */}
                 </div>
                 <div className="mask-container" ref={maskContainerRef}>
                     <div className="mask-img" ref={maskImageRef}>
-                        {/* <img src="../assets/images/img-1.jpg" alt="" /> */}
+                        <div className="text-box header">
+                            <h1>커피 한 잔처럼, 매 순간을 뜨겁게</h1>
+                        </div>
                     </div>
-                    <div className="header" ref={maskHeaderRef}>
-                        <h1>저의 이러한 여정에, 여러분과 함께 하기를 원합니다.</h1>
-                    </div>
+                    {/* <div className="header" ref={maskHeaderRef}>
+                        <h1></h1>
+                    </div> */}
                 </div>
             </section>
             <section className="outro">
                 <div className="inner">
-                    <div className="bg">
-                        <img src="/images/endPhoto.png" alt="" />
-                    </div>
                     <div className="text-box">
                         <p>
                             <img src="/images/endText.png" alt="" />
                         </p>
 
-                        <h1>음저의 이러한 여정에, 여러분과 함께 하기를 원합니다.</h1>
-                        <h5>© 2025 Kimmirae. All rights reserved.</h5>
+                        {/* <h5>© 2025 Kimmirae. All rights reserved.</h5> */}
                     </div>
                 </div>
             </section>

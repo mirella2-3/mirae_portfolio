@@ -1,14 +1,12 @@
 import styled from 'styled-components';
 
 export const PeopleStyle = styled.div`
-    // 이미지 스타일
     img {
         width: 100%;
         height: 100%;
         object-fit: cover;
     }
 
-    // 섹션 스타일
     section {
         position: relative;
         width: 100vw;
@@ -73,7 +71,7 @@ export const PeopleStyle = styled.div`
         }
 
         .spotlight {
-            background-color: #362718;
+            /* background-color: #362718; */
         }
 
         .spotlight-images {
@@ -109,12 +107,13 @@ export const PeopleStyle = styled.div`
 
         .mask-container {
             position: absolute;
-            top: 0;
+            top: 10%;
             left: 0;
             width: 100vw;
             height: 100svh;
-            -webkit-mask: url(../../assets/images/mask1.svg) center/contain no-repeat;
-            mask: url(../../assets/images/mask1.svg) center/contain no-repeat;
+            -webkit-mask: url(/images/Aboutme-image/1_Background.png) center/contain no-repeat;
+            mask: url(/images/Aboutme-image/1_Background.png) center/contain no-repeat;
+
             overflow: hidden;
             -webkit-mask-size: 0%;
             mask-size: 0%;
@@ -123,15 +122,10 @@ export const PeopleStyle = styled.div`
             .mask-img {
                 width: 100%;
                 height: 100%;
+                font: 30px;
             }
         }
     }
-    text-align: center;
-    padding-top: 315px;
-    background-image: url(/images/endBg.png);
-    background-position: 0, 0;
-    background-repeat: no-repeat;
-    position: relative;
 
     .bg {
         position: absolute;
@@ -146,22 +140,30 @@ export const PeopleStyle = styled.div`
         padding-top: 163px;
         position: relative;
         z-index: 1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        /* display: flex; */
 
-        span {
+        align-items: center;
+        .bg {
+            margin-bottom: 500px;
+        }
+        h5 {
             color: #cac6c2;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 500;
             line-height: 130%;
         }
-        h1 {
-            color: #cac6c2;
-            font-size: 16px;
-            font-family: 'EB Garamond';
-            /* padding-top: 297px; */
-            padding-bottom: 160px;
+    }
+
+    .outro {
+        position: relative;
+        background: transparent;
+        background-image: url(/images/Aboutme-image/LastContent.png);
+        .inner {
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
     }
 `;

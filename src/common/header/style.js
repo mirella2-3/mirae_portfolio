@@ -1,32 +1,22 @@
 import styled from 'styled-components';
 
 export const HeaderStyle = styled.header`
-    width: 100vw;
-    height: 68px;
+    /* width: 100vw; */
+    height: 40px;
     background: transparent;
     overflow: visible;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 9999;
-    transition: background-color 0.3s ease;
 
-    &.scrolled {
-        background-color: rgba(255, 255, 255, 0.5);
-    }
-    .inner {
-        display: flex;
-        justify-content: space-between;
-        line-height: 68px;
+    p {
+        line-height: 40px;
+        text-align: center;
 
-        p {
-            line-height: 68px;
-            text-align: center;
-
-            img {
-                vertical-align: middle;
-                cursor: pointer;
-            }
+        img {
+            vertical-align: middle;
+            cursor: pointer;
         }
     }
 `;
@@ -34,15 +24,19 @@ export const HeaderStyle = styled.header`
 export const NavStyle = styled.header`
     display: flex;
     gap: 40px;
+    padding: 0 70px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    margin: 20px;
 
     button {
         background: none;
         background-size: cover;
         font-family: 'EB Garamond';
         font-size: 20px;
-        line-height: 68px;
+        line-height: 40px;
         font-weight: 400;
-        color: #616161;
+        color: #3a3331ff;
 
         &:hover {
             color: #564438;

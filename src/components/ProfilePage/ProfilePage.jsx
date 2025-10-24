@@ -72,7 +72,8 @@ const ProfilePage = () => {
                     duration: 2,
                     scrollTrigger: {
                         trigger: sectionRef.current,
-                        start: 'bottom center',
+                        start: 'top 20%',
+                        end: 'top 0%',
 
                         toggleActions: 'play none none reverse',
                     },
@@ -91,6 +92,7 @@ const ProfilePage = () => {
                     scrollTrigger: {
                         trigger: sectionRef.current,
                         start: 'top 20%',
+                        end: 'top 0%',
 
                         toggleActions: 'play none none reverse',
                     },

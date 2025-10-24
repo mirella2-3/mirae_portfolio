@@ -26,7 +26,7 @@ export const SkillPageStyle = styled.div`
         }
     }
     .title {
-        color: #733a4a;
+        color: #81614e;
         font-size: 20px;
         font-weight: 600;
         width: 110px;

@@ -223,7 +223,7 @@ const Intro = () => {
             </section>
 
             <section className="con2">
-                <h1>Not just websites, but interactive stories</h1>
+                <h1>Where the aroma of my coffee first begins to unfold.</h1>
             </section>
 
             <section className="con3"></section>

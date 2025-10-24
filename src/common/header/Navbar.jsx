@@ -1,19 +1,19 @@
-import React from 'react';
+// Navbar.jsx
 import { NavStyle } from './style';
 
-const Navbar = () => {
-    const scrollToSection = (id) => {
-        const section = document.getElementById(id);
-        if (section) {
-            section.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
+const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+    }
+};
 
+const Navbar = () => {
     return (
         <NavStyle>
-            <button onClick={() => scrollToSection('Profile')}>Profile </button>
+            <button onClick={() => scrollToSection('Profile')}>Profile</button>
             <button onClick={() => scrollToSection('Projects')}>Projects</button>
-            <button onClick={() => scrollToSection('About Me')}>About Me</button>
+            <button onClick={() => scrollToSection('AboutMe')}>About Me</button>
         </NavStyle>
     );
 };

@@ -171,9 +171,9 @@ const WorkGallery = () => {
                                     <button onClick={() => window.open(item.githubUrl, '_blank')}>
                                         Github
                                     </button>
-                                    <button onClick={() => window.open(item.githubUrl, '_blank')}>
+                                    {/* <button onClick={() => window.open(item.githubUrl, '_blank')}>
                                         Figma
-                                    </button>
+                                    </button> */}
                                 </li>
                                 <li className="right">
                                     <p>
