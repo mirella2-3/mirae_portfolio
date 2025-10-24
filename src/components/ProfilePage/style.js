@@ -4,9 +4,7 @@ export const ProfilePageStyle = styled.div`
     background: #f2efeb;
     position: relative;
     width: 100vw;
-    /* height: 1080px; */
     padding: 160px 0;
-    /* border: 1px solid #000; */
 
     .profilePhoto {
         p {
@@ -17,12 +15,11 @@ export const ProfilePageStyle = styled.div`
 
     .circle {
         position: absolute;
-        right: 4vw;
-        bottom: -3vh;
+        right: 5vw;
+        bottom: -vh;
     }
 
     .inner {
-        /* margin: 160px 0; */
         height: 760px;
         /* border: 1px solid #000; */
         .text-box {
@@ -60,17 +57,22 @@ export const ProfilePageStyle = styled.div`
             .typing-demo,
             .typing-demo2 {
                 width: 670px;
-                animation: typing 2s steps(22), blink 0.5s step-end infinite alternate;
                 white-space: nowrap;
                 overflow: hidden;
                 color: var(--Black, #060606);
-                font-family: Pretendard;
+                font-family: 'Pretendard';
                 font-size: 32px;
                 font-style: normal;
                 font-weight: 600;
                 line-height: 170%;
                 opacity: 0;
+                visibility: hidden;
                 animation-fill-mode: forwards;
+
+                &.active {
+                    opacity: 1;
+                    animation: typing 2s steps(22);
+                }
             }
 
             .typing-demo2 {
@@ -83,6 +85,17 @@ export const ProfilePageStyle = styled.div`
                     font-weight: 700;
                     line-height: 170%;
                 }
+            }
+            .typing-demo.active {
+                animation: typing 2s steps(22);
+                visibility: visible;
+            }
+
+            .typing-demo2.active {
+                animation: typing 2s steps(22);
+                animation-delay: 2s; // 2초 딜레이
+                visibility: visible;
+                opacity: 1;
             }
         }
     }

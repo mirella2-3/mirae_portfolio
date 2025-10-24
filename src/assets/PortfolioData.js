@@ -3,7 +3,7 @@ const PortfolioData = [
     {
         id: 1,
         title: '라운드랩',
-        desc: '기존에 있던 라운드랩 공식 홈페이지의 단점을 보완하여 다양한 인터렉션 을 넣었어요 ',
+        desc: '기존 진부한 레이아웃을 현대적이고 직관적인 구조로 재구성. 최신 UI/UX 트렌드 반영해서 사용자가 직관적으로 탐색할 수 있도록 디자인 개선, 깔끔하고 세련된 인터페이스로 브랜드 이미지 강화함. ',
         vercelUrl: 'https://project-round-lab.vercel.app/',
         githubUrl: 'https://github.com/mirella2-3/roundlap.git',
         figmaUrl: 'https://figma.com/file/example1',
@@ -13,7 +13,7 @@ const PortfolioData = [
     {
         id: 2,
         title: '닌텐도',
-        desc: '할 일 관리와 진행 상태 추적이 가능한 간단한 To-Do 앱입니다.',
+        desc: '기존의 투박한 헤더를 세련되고 아름다운 디자인으로 개선. 헤더를 중심으로 전체적인 디자인을 현대적인 스타일로 다듬고, 그 안에 있는 콘텐츠들을 더욱 눈에 띄게 배치해 사용자 경험을 강화함. 추가로, 스와이퍼와 동영상을 활용해 사용자 흥미를 유도하고, 사이트 탐색을 더 재미있고 직관적으로 만듦.',
         vercelUrl: 'https://nintendo-react.vercel.app/',
         githubUrl: 'https://github.com/mirella2-3/mirae_porfoilo_nintendo.git',
         figmaUrl: 'https://figma.com/file/example2',
@@ -23,7 +23,7 @@ const PortfolioData = [
     {
         id: 3,
         title: 'MuseOn (OTT)',
-        desc: 'OpenWeather API를 활용한 실시간 날씨 정보 제공 웹 애플리케이션입니다.',
+        desc: '기본적인 OTT 서비스의 핵심 기능을 꼼꼼히 구현한 프로젝트. 사용자가 영상을 쉽게 탐색하고 시청할 수 있도록, 연관 콘텐츠 추천, 시청한 콘텐츠 목록, 찜한 콘텐츠 목록,작성한 리뷰 목록 등 기본적인 기능을 완벽하게 적용함. 디자인보다는 기능성에 집중하여, 안정적인 콘텐츠 스트리밍과 직관적인 사용자 경험을 제공하는 것을 목표로 작업함.',
         vercelUrl: 'https://portfolio-museon.vercel.app/',
         githubUrl: 'https://github.com/mirella2-3/mirae_porfoilo_museon.git',
         figmaUrl: 'https://figma.com/file/example3',
@@ -33,7 +33,7 @@ const PortfolioData = [
     {
         id: 4,
         title: '팀홀튼 (Mobile)',
-        desc: '영화 검색 및 즐겨찾기 기능을 제공하는 React + TMDB API 프로젝트입니다.',
+        desc: '모바일 디자인을 피그마로 디자인부터 프로토타입까지 진행한 작업. 피그마의 디자인 시스템 구축, 인터랙션 프로토타입 제작, 협업 기능 활용을 통해 효율적인 작업 프로세스를 구축함. 최종적으로 사용자가 직관적으로 이용할 수 있는 모바일 UI/UX 디자인을 완성.',
         vercelUrl:
             'https://www.figma.com/proto/8DdliTGJ6W4UmIYUf5uAPC/%EC%9E%A5%EC%83%88%EB%AF%B8%EC%9E%A5%EC%9C%A0%EC%A0%95%EA%B9%80%EB%AF%B8%EB%9E%98_%EB%AF%B8%EB%8B%88%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8--%EC%A0%9C%EC%B6%9C%EC%9A%A9-?node-id=259-9089&m=draw&scaling=scale-down&content-scaling=fixed&page-id=13%3A53&starting-point-node-id=259%3A9089&show-proto-sidebar=1&t=wQVzTVEmE2YJW4NN-1',
         githubUrl: 'https://github.com/mirella2-3/roundlap.git',
@@ -44,7 +44,7 @@ const PortfolioData = [
     {
         id: 5,
         title: 'SRT',
-        desc: '상품 리스트, 장바구니, 결제 흐름을 구현한 전자상거래 웹사이트 데모입니다.',
+        desc: '세련된 컬러로 전체 색감을 변경하고, 승차권 금액 연계 기능을 추가하여 실시간 정보 업데이트를 구현. 이를 통해 UI/UX 개선과 동적 데이터 처리에 대한 작업을 진행.',
         vercelUrl: 'https://mirella2-3.github.io/mirae_porfoilo_srt/',
         githubUrl: 'https://github.com/mirella2-3/mirae_porfoilo_srt.git',
         figmaUrl: 'https://figma.com/file/example5',
