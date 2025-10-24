@@ -26,9 +26,6 @@ const Header = () => {
     return (
         <HeaderStyle className={isScrolled ? 'scrolled' : ''}>
             <div className="inner">
-                <p>
-                    <img src="/images/Logo.png" alt="" />
-                </p>
                 <Navbar />
             </div>
         </HeaderStyle>

@@ -11,12 +11,9 @@ const Navbar = () => {
 
     return (
         <NavStyle>
-            <button onClick={() => scrollToSection('About Me')}>About Me </button>
+            <button onClick={() => scrollToSection('Profile')}>Profile </button>
             <button onClick={() => scrollToSection('Projects')}>Projects</button>
-            <button onClick={() => scrollToSection('Former-company')}>Former-company</button>
-            <button onClick={() => scrollToSection('Portrait Retouching')}>
-                Portrait Retouching
-            </button>
+            <button onClick={() => scrollToSection('About Me')}>About Me</button>
         </NavStyle>
     );
 };

@@ -16,8 +16,8 @@ const Home = () => {
             <SkillPage />
             <TextPage />
             <WorkGallery />
-            <AboutMe />
-            <EndPage />
+            {/* <AboutMe /> */}
+            {/* <EndPage /> */}
             <People />
         </HomeStyle>
     );

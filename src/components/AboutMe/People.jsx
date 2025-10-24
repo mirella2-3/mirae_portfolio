@@ -115,35 +115,96 @@ const People = () => {
                     <p>
                         <img src="/images/Aboutme-image/bean.png" alt="" />
                     </p>
-                    <h1>Shared Moments</h1>
+                    <h1>
+                        Shared Moments
+                        <span>
+                            Every Moment, Like a Rich Brew <br />
+                            <br />
+                            제가 마주하는 모든 순간에 풍미를 더하며 다채로운 삶을 만들어 가고
+                            있습니다.
+                        </span>
+                    </h1>
                 </div>
                 <div className="spotlight-images" ref={spotlightImagesRef}>
                     <div className="row">
                         <div className="img"></div>
                         <div className="img">
-                            <img src="../assets/images/img-1.jpg" alt="" />
+                            <img src="/images/Aboutme-image/Picture0.png" alt="" />
+                        </div>
+                        <div className="img"></div>
+                        <div className="img"></div>
+                    </div>
+                    <div className="row">
+                        <div className="img">
+                            <img src="/images/Aboutme-image/Picture2.png" alt="" />
                         </div>
                         <div className="img"></div>
                         <div className="img">
-                            <img src="../assets/images/img-2.jpg" alt="" />
+                            <img src="/images/Aboutme-image/Picture3.png" alt="" />
+                        </div>
+                        <div className="img">
+                            <img src="/images/Aboutme-image/Picture4.png" alt="" />
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="img"></div>
+                        <div className="img">
+                            <img src="/images/Aboutme-image/Picture1.png" alt="" />
+                        </div>
+                        <div className="img"></div>
+                        <div className="img">
+                            <img src="/images/Aboutme-image/Picture5.png" alt="" />
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="img"></div>
+                        <div className="img"></div>
+                        <div className="img">
+                            <img src="/images/Aboutme-image/Picture6.png" alt="" />
+                        </div>
+                        <div className="img">
+                            <img src="/images/Aboutme-image/Picture7.png" alt="" />
                         </div>
                     </div>
                     <div className="row">
                         <div className="img">
-                            <img src="../assets/images/img-3.jpg" alt="" />
+                            <img src="/images/Aboutme-image/Picture8.png" alt="" />
+                        </div>
+                        <div className="img">
+                            <img src="/images/Aboutme-image/Picture9.png" alt="" />
+                        </div>
+                        <div className="img"></div>
+                        <div className="img">
+                            <img src="/images/Aboutme-image/Picture10.png" alt="" />
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="img">
+                            <img src="/images/Aboutme-image/Picture11.png" alt="" />
+                        </div>
+                        <div className="img"></div>
+                        <div className="img">
+                            <img src="/images/Aboutme-image/Picture12.png" alt="" />
+                        </div>
+                        <div className="img"></div>
+                    </div>
+                    <div className="row">
+                        <div className="img"></div>
+                        <div className="img">
+                            <img src="/images/Aboutme-image/Picture13.png" alt="" />
                         </div>
                         <div className="img"></div>
                         <div className="img"></div>
-                        <div className="img"></div>
                     </div>
+
                     {/* More rows */}
                 </div>
                 <div className="mask-container" ref={maskContainerRef}>
                     <div className="mask-img" ref={maskImageRef}>
-                        <img src="../assets/images/img-1.jpg" alt="" />
+                        {/* <img src="../assets/images/img-1.jpg" alt="" /> */}
                     </div>
                     <div className="header" ref={maskHeaderRef}>
-                        <h1>Shared Moments</h1>
+                        <h1>저의 이러한 여정에, 여러분과 함께 하기를 원합니다.</h1>
                     </div>
                 </div>
             </section>
@@ -157,7 +218,7 @@ const People = () => {
                             <img src="/images/endText.png" alt="" />
                         </p>
 
-                        <h1>내 작품이 커피 향처럼 오래 머물기를 바랍니다.</h1>
+                        <h1>음저의 이러한 여정에, 여러분과 함께 하기를 원합니다.</h1>
                         <h5>© 2025 Kimmirae. All rights reserved.</h5>
                     </div>
                 </div>

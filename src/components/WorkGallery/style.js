@@ -54,7 +54,7 @@ export const WorkGalleryStyle = styled.div`
             overflow: hidden;
 
             button {
-                width: 207.2px;
+                /* width: 207.2px; */
                 margin-left: -9.25px;
                 height: 56px;
                 height: 88px;
@@ -126,6 +126,17 @@ export const WorkGalleryStyle = styled.div`
                             font-size: 12px;
                             border-radius: 0;
                             padding: 5px 10px;
+                            cursor: default;
+
+                            &:hover {
+                                background: #cfc0acff;
+                                color: #fff;
+                                font-weight: 300;
+                                border: none;
+                                font-size: 12px;
+                                border-radius: 0;
+                                padding: 5px 10px;
+                            }
                         }
                     }
                     p {

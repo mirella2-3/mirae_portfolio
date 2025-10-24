@@ -119,7 +119,7 @@ const ProfilePage = () => {
                     <h3>Profile</h3>
                     <div className="typing-box">
                         <div ref={typingDemoRef} className="typing-demo">
-                            아이디어를 인터페이스로, 감각을 기능으로!
+                            아이디어를 인터페이스로, 감각을 기능으로.
                         </div>
                         <div ref={typingDemo2Ref} className="typing-demo2">
                             기획과 감각을 코드로 구현하는 <strong> 개발자 김미래 </strong> 입니다.

@@ -1,19 +1,6 @@
 import styled from 'styled-components';
 
 export const PeopleStyle = styled.div`
-    h1 {
-        text-transform: uppercase;
-        font-size: 6rem;
-        line-height: 0.85;
-        letter-spacing: -0.02rem;
-        color: #cac6c2;
-        font-size: 40px;
-        font-family: 'EB Garamond';
-        font-weight: 600;
-        padding-top: 297px;
-        padding-bottom: 160px;
-    }
-
     // 이미지 스타일
     img {
         width: 100%;
@@ -39,7 +26,7 @@ export const PeopleStyle = styled.div`
 
         .header {
             position: absolute;
-            top: 50%;
+            top: 40%;
             left: 50%;
             transform: translate(-50%, -50%);
             text-align: center;
@@ -65,6 +52,23 @@ export const PeopleStyle = styled.div`
             h1 {
                 position: relative;
                 z-index: 1;
+                span {
+                    font-size: 15px;
+                    display: block;
+                    font-family: 'Pretendard';
+                    margin: 50px;
+                    font-weight: 300;
+                }
+            }
+            h1 {
+                text-transform: uppercase;
+                font-size: 6rem;
+                line-height: 0.85;
+                letter-spacing: -0.02rem;
+                color: #cac6c2;
+                font-size: 40px;
+                font-family: 'EB Garamond';
+                font-weight: 600;
             }
         }
 
@@ -87,13 +91,13 @@ export const PeopleStyle = styled.div`
 
         .row {
             width: 100%;
-            padding: 2rem;
+            /* padding: 2rem; */
             display: flex;
             gap: 2rem;
 
             .img {
                 flex: 1;
-                aspect-ratio: 5/7;
+                /* aspect-ratio: 5/7; */
                 overflow: hidden;
 
                 img {
@@ -142,6 +146,9 @@ export const PeopleStyle = styled.div`
         padding-top: 163px;
         position: relative;
         z-index: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         span {
             color: #cac6c2;
@@ -153,7 +160,7 @@ export const PeopleStyle = styled.div`
             color: #cac6c2;
             font-size: 16px;
             font-family: 'EB Garamond';
-            padding-top: 297px;
+            /* padding-top: 297px; */
             padding-bottom: 160px;
         }
     }
