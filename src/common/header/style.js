@@ -1,51 +1,53 @@
 import styled from 'styled-components';
 
 export const HeaderStyle = styled.header`
-    /* width: 100vw; */
-    height: 40px;
     background: transparent;
-    overflow: visible;
+
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 38px;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 9999;
-
-    p {
-        line-height: 40px;
-        text-align: center;
-
-        img {
-            vertical-align: middle;
-            cursor: pointer;
-        }
-    }
 `;
 
-export const NavStyle = styled.header`
+export const NavStyle = styled.nav`
     display: flex;
     gap: 40px;
-    padding: 0 70px;
-    background-color: rgba(255, 255, 255, 0.2);
+    padding: 0 65px;
+    background-color: rgba(255, 255, 255, 0.4);
     border-radius: 50px;
     margin: 20px;
+    margin: auto;
 
     button {
         background: none;
         background-size: cover;
         font-family: 'EB Garamond';
         font-size: 20px;
-        line-height: 40px;
+        line-height: 45px;
         font-weight: 400;
-        color: #3a3331ff;
+        color: #564438;
+        position: relative;
+        p {
+            position: absolute;
+            top: 1px;
+
+            left: 50%;
+            transform: translateX(-50%);
+            mix-blend-mode: multiply;
+            width: 44px;
+            height: 42px;
+            flex-shrink: 0;
+            aspect-ratio: 22/21;
+            opacity: 0;
+            transition: all 0.3s;
+        }
 
         &:hover {
-            color: #564438;
-            opacity: 0.7;
-            background: radial-gradient(
-                50% 50% at 50% 50%,
-                rgba(153, 117, 92, 0.2) 0%,
-                rgba(153, 117, 92, 0) 100%
-            );
+            color: #24190f;
+            p {
+                opacity: 1;
+            }
         }
     }
 `;

@@ -3,6 +3,7 @@ import PortfolioData from '../../assets/PortfolioData';
 import { WorkGalleryStyle } from './style';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { FaLink } from 'react-icons/fa';
 
 const WorkGallery = () => {
     const [activeIndex, setActiveIndex] = useState(0);
@@ -158,26 +159,41 @@ const WorkGallery = () => {
                         >
                             <ul>
                                 <li className="left">
-                                    <h2>{item.title}</h2>
+                                    <h2>
+                                        {item.title}
+                                        {index === 0 && (
+                                            <img
+                                                src="/images/Projects-image/gold.png"
+                                                style={{ marginLeft: '10px', marginTop: '7px' }}
+                                            />
+                                        )}
+                                    </h2>
                                     <div>
                                         {item.tool.map((toolItem, toolIndex) => (
                                             <button key={toolIndex}>{toolItem}</button>
                                         ))}
                                     </div>
                                     <p>{item.desc}</p>
+
                                     <button onClick={() => window.open(item.vercelUrl, '_blank')}>
                                         Web
                                     </button>
                                     <button onClick={() => window.open(item.githubUrl, '_blank')}>
                                         Github
                                     </button>
-                                    {/* <button onClick={() => window.open(item.githubUrl, '_blank')}>
+                                    <button onClick={() => window.open(item.figmaUrl, '_blank')}>
                                         Figma
-                                    </button> */}
+                                    </button>
                                 </li>
                                 <li className="right">
                                     <p>
                                         <img src={item.imgUrl} alt={item.imgUrl} />
+                                        <p className="txt">
+                                            {item.title}
+                                            <FaLink
+                                                style={{ fontSize: '35px', marginLeft: '20px' }}
+                                            />
+                                        </p>
                                     </p>
                                 </li>
                             </ul>

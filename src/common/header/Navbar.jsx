@@ -11,9 +11,24 @@ const scrollToSection = (sectionId) => {
 const Navbar = () => {
     return (
         <NavStyle>
-            <button onClick={() => scrollToSection('Profile')}>Profile</button>
-            <button onClick={() => scrollToSection('Projects')}>Projects</button>
-            <button onClick={() => scrollToSection('AboutMe')}>About Me</button>
+            <button onClick={() => scrollToSection('Profile')}>
+                Profile
+                <p>
+                    <img src="/images/Intro-image/header.png" alt="" />
+                </p>
+            </button>
+            <button onClick={() => scrollToSection('Projects')}>
+                Projects
+                <p>
+                    <img src="/images/Intro-image/header.png" alt="" />
+                </p>
+            </button>
+            <button onClick={() => scrollToSection('AboutMe')}>
+                About Me
+                <p>
+                    <img src="/images/Intro-image/header.png" alt="" />
+                </p>
+            </button>
         </NavStyle>
     );
 };
