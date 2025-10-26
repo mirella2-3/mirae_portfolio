@@ -375,7 +375,7 @@ export const FirstPage = styled.div`
     @media screen and (max-width: 1023px) {
         background-color: #362718;
         background-image: none;
-
+        height: 100vh;
         .text {
             font-size: 100px;
         }
@@ -384,7 +384,7 @@ export const FirstPage = styled.div`
         background-color: #362718;
         background-image: none;
         padding-top: 150px;
-        height: 80vh;
+        height: 90vh;
         .coffee {
             img {
                 transform: scale(0.6);
