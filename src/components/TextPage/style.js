@@ -54,4 +54,39 @@ export const TextPageStyle = styled.div`
         font-size: 18px;
         font-weight: 500;
     }
+    @media screen and (max-width: 1023px) {
+        .inner {
+            width: 100vw;
+        }
+        h1 {
+            font-size: 60px;
+            font-weight: 600;
+            color: #000;
+            line-height: 1;
+            margin-bottom: 8px;
+            font-family: 'EB Garamond';
+        }
+        h3 {
+            color: #564438;
+            font-size: 50px;
+            font-weight: 600;
+            line-height: 1;
+            margin-bottom: 58px;
+            font-family: 'EB Garamond';
+        }
+        span {
+            font-size: 24px;
+        }
+    }
+    @media screen and (max-width: 600px) {
+        h1 {
+            font-size: 40px;
+        }
+        h3 {
+            font-size: 34px;
+        }
+        span {
+            font-size: 20px;
+        }
+    }
 `;

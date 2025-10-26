@@ -50,15 +50,6 @@ export const PeopleStyle = styled.div`
             h1 {
                 position: relative;
                 z-index: 1;
-                span {
-                    font-size: 15px;
-                    display: block;
-                    font-family: 'Pretendard';
-                    margin: 50px;
-                    font-weight: 300;
-                }
-            }
-            h1 {
                 text-transform: uppercase;
                 font-size: 6rem;
                 line-height: 0.85;
@@ -67,11 +58,17 @@ export const PeopleStyle = styled.div`
                 font-size: 40px;
                 font-family: 'EB Garamond';
                 font-weight: 600;
+                span {
+                    font-size: 15px;
+                    display: block;
+                    font-family: 'EB Garamond';
+                    margin: 50px;
+                    font-weight: 300;
+                }
             }
         }
 
         .spotlight {
-            /* background-color: #362718; */
         }
 
         .spotlight-images {
@@ -89,13 +86,11 @@ export const PeopleStyle = styled.div`
 
         .row {
             width: 100%;
-            /* padding: 2rem; */
             display: flex;
             gap: 2rem;
 
             .img {
                 flex: 1;
-                /* aspect-ratio: 5/7; */
                 overflow: hidden;
 
                 img {
@@ -140,8 +135,6 @@ export const PeopleStyle = styled.div`
         padding-top: 163px;
         position: relative;
         z-index: 1;
-        /* display: flex; */
-
         align-items: center;
         .bg {
             margin-bottom: 500px;
@@ -157,13 +150,143 @@ export const PeopleStyle = styled.div`
     .outro {
         position: relative;
         background: transparent;
-        background-image: url(/images/Aboutme-image/LastContent.png);
+        /* background-image: url(/images/Aboutme-image/LastContent.png); */
+        /* background-size: cover; */
+        background: #362718;
+
         .inner {
             text-align: center;
             position: absolute;
-            top: 50%;
+            top: 60%;
             left: 50%;
             transform: translate(-50%, -50%);
+            p {
+                position: absolute;
+                top: 40%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: -1;
+                border: 1px solid transparent;
+                width: 530px;
+                height: 488px;
+                flex-shrink: 0;
+                background: #362718;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    flex-shrink: 0;
+                    mix-blend-mode: multiply;
+                }
+            }
+
+            h4 {
+                color: var(--Brown-brown-200, #b1aaa4);
+                text-align: center;
+                font-size: 40px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+                margin-bottom: 28px;
+                font-family: 'EB Garamond';
+            }
+            h5 {
+                color: var(--White, #fff);
+                text-align: center;
+                font-family: Pretendard;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 130%;
+                margin-bottom: 310px;
+            }
+            span {
+                color: var(--Brown-brown-100, #787572ff);
+
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 130%;
+            }
+        }
+    }
+    @media screen and (max-width: 1023px) {
+        section {
+            &:first-child {
+                margin-top: 500px;
+            }
+            .header {
+                width: 100%;
+
+                p {
+                    font-size: 30px;
+                }
+                h1 {
+                    font-size: 60px;
+                    height: auto;
+                    margin: 0;
+                    span {
+                        font-size: 22px;
+                    }
+                }
+            }
+        }
+        .outro {
+            width: 100vw;
+            .inner {
+                h5 {
+                    font-size: 24px;
+                    font-weight: 300;
+                }
+                span {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 600px) {
+        section {
+            &:first-child {
+                margin-top: 0px;
+            }
+            .header {
+                p {
+                    font-size: 20px;
+                }
+                h1 {
+                    font-size: 40px;
+                    height: auto;
+
+                    span {
+                        margin: 30px auto;
+                        width: 400px;
+                        font-size: 20px;
+                        word-break: keep-all;
+                        line-height: 1.2;
+                    }
+                }
+            }
+            .text-box {
+                padding-top: 400px;
+            }
+        }
+        .outro {
+            .inner {
+                position: absolute;
+                top: 40%;
+                left: 50%;
+                p {
+                    top: 50%;
+                }
+                h4 {
+                    font-size: 32px;
+                }
+                h5 {
+                    font-size: 20px;
+                }
+                span {
+                    font-size: 16px;
+                }
+            }
         }
     }
 `;

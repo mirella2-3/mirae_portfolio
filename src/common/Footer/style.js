@@ -11,6 +11,9 @@ export const FooterStyle = styled.footer`
             justify-content: center;
             li {
                 position: relative;
+                font-weight: 300;
+                font-size: 18px;
+                font-family: 'Pretendard';
                 &::before {
                     content: '';
                     display: block;
@@ -26,6 +29,27 @@ export const FooterStyle = styled.footer`
                     &::before {
                         content: none;
                     }
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 1023px) {
+        .inner {
+            padding: 20px 0;
+            width: 100vw;
+            ul {
+                li {
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 600px) {
+        .inner {
+            padding: 20px 0;
+            width: 100vw;
+            ul {
+                li {
+                    font-size: 16px8;
                 }
             }
         }

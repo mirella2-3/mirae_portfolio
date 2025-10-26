@@ -13,75 +13,105 @@ const TextPage = () => {
     const spanRef = useRef(null);
     useEffect(() => {
         const ctx = gsap.context(() => {
-            // 나타나는 애니메이션
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: sectionRef.current,
-                    start: 'top 55%',
-                    end: '+=450',
-                    scrub: true,
+            ScrollTrigger.matchMedia({
+                // === 데스크톱 (1024px 이상) ===
+                '(min-width: 1024px)': function () {
+                    const tl = gsap.timeline({
+                        scrollTrigger: {
+                            trigger: sectionRef.current,
+                            start: 'top 55%',
+                            end: '+=450',
+                            scrub: true,
+                        },
+                    });
+
+                    tl.to(gradientRef.current, {
+                        scale: 1,
+                        opacity: 1,
+                        duration: 1,
+                        ease: 'power2.out',
+                    });
+
+                    tl.fromTo(
+                        h1Ref.current,
+                        { opacity: 0, y: 30 },
+                        { opacity: 1, y: 0, duration: 1 },
+                        '+=0.2'
+                    );
+
+                    tl.fromTo(
+                        h3Ref.current,
+                        { opacity: 0, y: 30 },
+                        { opacity: 1, y: 0, duration: 1 },
+                        '+=0.2'
+                    );
+
+                    tl.fromTo(
+                        spanRef.current,
+                        { opacity: 0, y: 20 },
+                        { opacity: 1, y: 0, duration: 0.4 },
+                        '+=0.2'
+                    );
+
+                    const tlDisappear = gsap.timeline({
+                        scrollTrigger: {
+                            trigger: sectionRef.current,
+                            start: 'top -22%',
+                            end: 'top -45%',
+                            scrub: true,
+                        },
+                    });
+
+                    tlDisappear.to(h1Ref.current, {
+                        x: -100,
+                        opacity: 0,
+                        ease: 'power1.out',
+                        duration: 0.3,
+                    });
+
+                    tlDisappear.to(
+                        h3Ref.current,
+                        { x: 100, opacity: 0, ease: 'power1.out', duration: 0.3 },
+                        '>-0.2'
+                    );
+
+                    tlDisappear.to(
+                        spanRef.current,
+                        { opacity: 0, filter: 'blur(8px)', ease: 'power1.out', duration: 0.3 },
+                        '>-0.2'
+                    );
                 },
-            });
 
-            tl.to(gradientRef.current, {
-                scale: 1,
-                opacity: 1,
-                duration: 1,
-                ease: 'power2.out',
-            });
+                '(max-width: 1023px)': function () {
+                    const tl = gsap.timeline({
+                        scrollTrigger: {
+                            trigger: sectionRef.current,
+                            start: 'top 60%',
+                            end: '+=450',
+                            scrub: true,
+                        },
+                    });
 
-            tl.fromTo(
-                h1Ref.current,
-                { opacity: 0, y: 30 },
-                { opacity: 1, y: 0, duration: 1 },
-                '+=0.2'
-            );
+                    tl.to(gradientRef.current, {
+                        scale: 1,
+                        opacity: 1,
+                        duration: 1,
+                        ease: 'power2.out',
+                    });
 
-            tl.fromTo(
-                h3Ref.current,
-                { opacity: 0, y: 30 },
-                { opacity: 1, y: 0, duration: 1 },
-                '+=0.2'
-            );
-
-            tl.fromTo(
-                spanRef.current,
-                { opacity: 0, y: 20 },
-                { opacity: 1, y: 0, duration: 0.4 },
-                '+=0.2'
-            );
-
-            // 사라지는 애니메이션
-            const tlDisappear = gsap.timeline({
-                scrollTrigger: {
-                    trigger: sectionRef.current,
-                    start: 'top -22%', // 나타나는 애니메이션보다 늦게 시작
-                    end: 'top -45%',
-                    scrub: true,
+                    tl.fromTo(
+                        [h1Ref.current, h3Ref.current, spanRef.current],
+                        { opacity: 0, y: 20 },
+                        { opacity: 1, y: 0, duration: 0.6, stagger: 0.2 }
+                    );
                 },
+
+                // '(max-width: 600px)': function () {
+                //     gsap.set([gradientRef.current, h1Ref.current, h3Ref.current, spanRef.current], {
+                //         clearProps: 'all',
+                //     });
+                // },
             });
-
-            // h1 왼쪽으로 이동하며 사라짐
-            tlDisappear.to(h1Ref.current, {
-                x: -100,
-                opacity: 0,
-                ease: 'power1.out',
-                duration: 0.3,
-            });
-
-            // h3 오른쪽으로 이동하며 사라짐
-            tlDisappear.to(
-                h3Ref.current,
-                { x: 100, opacity: 0, ease: 'power1.out', duration: 0.3 },
-                '>-0.2'
-            );
-
-            // span 블러와 함께 사라짐
-            tlDisappear.to(
-                spanRef.current,
-                { opacity: 0, filter: 'blur(8px)', ease: 'power1.out', duration: 0.3 },
-                '>-0.2'
-            );
         }, sectionRef);
 
         return () => ctx.revert();

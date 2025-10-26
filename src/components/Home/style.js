@@ -293,6 +293,24 @@ export const IntroStyle = styled.div`
     .mobile-cards {
         display: none;
     }
+    @media screen and (max-width: 1023px) {
+        background-color: #362718;
+        .con1,
+        .con2,
+        .con3,
+        .cards {
+            display: none;
+        }
+    }
+    @media screen and (max-width: 600px) {
+        background-color: #362718;
+        .con1,
+        .con2,
+        .con3,
+        .cards {
+            display: none;
+        }
+    }
 `;
 const fadeIn = keyframes`
   0% {
@@ -313,6 +331,7 @@ export const FirstPage = styled.div`
     background-repeat: no-repeat;
     background-position: 0 0;
     position: relative;
+
     .coffee {
         position: absolute;
         top: 50%;
@@ -334,6 +353,7 @@ export const FirstPage = styled.div`
         letter-spacing: -1.66px;
         text-transform: uppercase;
         width: 100vw;
+
         li {
             opacity: 0;
             animation: ${fadeIn} 0.5s forwards; /* 애니메이션 적용 */
@@ -350,6 +370,28 @@ export const FirstPage = styled.div`
         }
         li:nth-child(4) {
             animation-delay: 2.1s; /* 네 번째 항목은 2.1초 뒤 */
+        }
+    }
+    @media screen and (max-width: 1023px) {
+        background-color: #362718;
+        background-image: none;
+
+        .text {
+            font-size: 100px;
+        }
+    }
+    @media screen and (max-width: 600px) {
+        background-color: #362718;
+        background-image: none;
+        padding-top: 150px;
+        height: 80vh;
+        .coffee {
+            img {
+                transform: scale(0.6);
+            }
+        }
+        .text {
+            font-size: 70px;
         }
     }
 `;

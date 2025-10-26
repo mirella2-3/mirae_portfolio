@@ -8,6 +8,14 @@ export const HeaderStyle = styled.header`
     left: 50%;
     transform: translateX(-50%);
     z-index: 9999;
+    @media screen and (max-width: 1023px) {
+    }
+    @media screen and (max-width: 600px) {
+        width: 100%;
+        margin: 0;
+        padding: 0%;
+        top: 0;
+    }
 `;
 
 export const NavStyle = styled.nav`
@@ -48,6 +56,24 @@ export const NavStyle = styled.nav`
             p {
                 opacity: 1;
             }
+        }
+    }
+    @media screen and (max-width: 1023px) {
+        button {
+            width: 130px;
+            font-size: 28px;
+        }
+    }
+    @media screen and (max-width: 600px) {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        padding: 20px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        button {
+            font-size: 25px;
         }
     }
 `;

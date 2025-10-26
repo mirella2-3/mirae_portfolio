@@ -112,4 +112,74 @@ export const ProfilePageStyle = styled.div`
             opacity: 0.3;
         }
     }
+    @media screen and (max-width: 1023px) {
+        height: 74vh;
+        position: relative;
+        padding-bottom: 0;
+        .profilePhoto {
+            p {
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+        .circle {
+            left: 0;
+            bottom: 0;
+            border: 1px solid #000;
+        }
+        .inner {
+            height: 74vh;
+            width: 100%;
+
+            .text-box {
+                width: 100vw;
+                h3 {
+                }
+            }
+            .typing-box {
+                width: 670px;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                .typing-demo {
+                    width: 600px;
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 600px) {
+        width: 100vw;
+
+        .inner {
+            width: 100vw;
+            .typing-box {
+                width: 600px;
+
+                right: 50%;
+                bottom: 0%;
+                transform: translate(-50%, -50%);
+                padding: 0;
+                margin: 0;
+
+                .typing-demo,
+                .typing-demo2 {
+                    /* border: 1px solid #000; */
+                    width: 100vw;
+                    strong {
+                    }
+                    &.active {
+                        font-size: 22px;
+                        text-align: center;
+
+                        strong {
+                            font-size: 22px;
+                            width: 500px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 `;

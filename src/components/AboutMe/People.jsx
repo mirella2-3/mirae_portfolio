@@ -204,19 +204,20 @@ const People = () => {
                             <h1>커피 한 잔처럼, 매 순간을 뜨겁게</h1>
                         </div>
                     </div>
-                    {/* <div className="header" ref={maskHeaderRef}>
-                        <h1></h1>
-                    </div> */}
                 </div>
             </section>
             <section className="outro">
                 <div className="inner">
                     <div className="text-box">
                         <p>
-                            <img src="/images/endText.png" alt="" />
+                            <img src="/images/Aboutme-image/coffee.png" alt="" />
                         </p>
-
-                        {/* <h5>© 2025 Kimmirae. All rights reserved.</h5> */}
+                        <h4>
+                            I hope what I’ve built stays with you <br />— like the gentle aroma of
+                            coffee.
+                        </h4>
+                        <h5>저의 작업들이 커피 향처럼 오래 머물기를 바랍니다.</h5>
+                        <span>© 2025 KIMMIRAE. All rights reserved.</span>
                     </div>
                 </div>
             </section>

@@ -48,15 +48,13 @@ export const WorkGalleryStyle = styled.div`
 
         .buttonContainer {
             height: 15%;
-            /* margin-left: 8.3px; */
+
             padding-left: 9px;
             width: 1600px;
             overflow: hidden;
 
             button {
-                /* width: 207.2px; */
                 margin-left: -9.25px;
-                height: 56px;
                 height: 88px;
                 float: left;
                 border: none;
@@ -68,18 +66,16 @@ export const WorkGalleryStyle = styled.div`
                 transition: background-color 0.2s ease;
 
                 &:hover {
+                    /* filter: brightness(1.5); */
                 }
                 span {
                     height: 56px;
                     color: var(--Brown-brown-200, #b1aaa4);
                     text-align: center;
-
-                    /* Medium/18px */
-
                     font-size: 18px;
                     font-style: normal;
                     font-weight: 400;
-                    line-height: 130%; /* 23.4px */
+                    line-height: 130%;
                 }
             }
         }
@@ -95,7 +91,6 @@ export const WorkGalleryStyle = styled.div`
             font-size: 22px;
             display: none;
             border-radius: 15px;
-
             position: absolute;
             top: 56px;
             z-index: 100;
@@ -142,7 +137,7 @@ export const WorkGalleryStyle = styled.div`
 
                     p {
                         color: var(--Grey-grey-500, #616161);
-
+                        word-break: keep-all;
                         font-family: Pretendard;
                         font-size: 16px;
                         font-style: normal;
@@ -207,6 +202,107 @@ export const WorkGalleryStyle = styled.div`
                         width: 100%;
                         height: 100%;
                         object-fit: cover;
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 1023px) {
+        width: 100vw;
+
+        .tabContainer {
+            width: 100vw;
+            position: relative;
+            .buttonContainer {
+                button {
+                    span {
+                        font-size: 22px;
+                    }
+                }
+            }
+            .tabPanel {
+                padding: 74px 0px;
+                ul {
+                    width: 100vw;
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 40px;
+                    .left {
+                        width: 100vw;
+                        padding: 0 20px;
+                        h2 {
+                            font-size: 80px;
+                            padding-bottom: 30px;
+                        }
+                        div {
+                            button {
+                                font-size: 20px;
+                                &:hover {
+                                    font-size: 20px;
+                                }
+                            }
+                        }
+                        p {
+                            font-size: 24px;
+                        }
+                        > button {
+                            font-size: 24px;
+                            /* margin-bottom: 40px; */
+                        }
+                    }
+                    .right {
+                        width: 100vw;
+                        padding: 0 20px;
+                        p {
+                            height: auto;
+                        }
+                    }
+                }
+            }
+        }
+        .bgText {
+            display: none;
+        }
+    }
+    @media screen and (max-width: 600px) {
+        .tabContainer {
+            .buttonContainer {
+                button {
+                    span {
+                        font-size: 18px;
+                        font-weight: 700;
+                        height: 30px;
+                        width: 64px;
+                        .projects-word {
+                            display: none;
+                        }
+                    }
+                }
+            }
+            .tabPanel {
+                padding: 50px 0;
+                height: 100vh;
+
+                ul {
+                    .left {
+                        h2 {
+                            font-size: 64px;
+                        }
+                        p {
+                            font-size: 18px;
+                        }
+                        div {
+                            button {
+                                font-size: 16px;
+                                &:hover {
+                                    font-size: 16px;
+                                }
+                            }
+                        }
+
+                        button {
+                            font-size: 18px;
+                        }
                     }
                 }
             }

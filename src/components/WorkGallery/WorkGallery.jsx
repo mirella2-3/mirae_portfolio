@@ -27,21 +27,63 @@ const WorkGallery = () => {
             transformOrigin: 'center center',
         });
 
-        gsap.to(el, {
-            scale: 1,
-            y: -250,
-            filter: 'grayscale(0%)',
-            opacity: 1,
-            duration: 1,
+        ScrollTrigger.matchMedia({
+            '(min-width: 1024px)': function () {
+                gsap.to(el, {
+                    scale: 1,
+                    y: -250,
+                    filter: 'grayscale(0%)',
+                    opacity: 1,
+                    duration: 1,
+                    scrollTrigger: {
+                        trigger: el,
+                        start: 'top 80%',
+                        end: 'top 300px',
+                        toggleActions: 'play none none reverse',
+                    },
+                });
+            },
 
-            scrollTrigger: {
-                trigger: el,
-                start: startOffset,
-                // start: 'top 80%',
-                end: 'top 300px',
-                toggleActions: 'play none none reverse',
+            '(max-width: 1023px)': function () {
+                gsap.to(el, {
+                    scale: 1,
+                    y: -100,
+                    filter: 'grayscale(0%)',
+                    opacity: 1,
+                    duration: 1,
+                    scrollTrigger: {
+                        trigger: el,
+                        start: 'top 80%',
+                        end: 'top 300px',
+                        toggleActions: 'play none none reverse',
+                    },
+                });
+            },
+
+            '(max-width: 600px)': function () {
+                // gsap.set(el, {
+                //     scale: 1,
+                //     y: 0,
+                //     filter: 'grayscale(0%)',
+                //     opacity: 1,
+                // });
+
+                gsap.to(el, {
+                    opacity: 1,
+                    filter: 'grayscale(0%)',
+                    duration: 0.8,
+                    scrollTrigger: {
+                        trigger: el,
+                        start: 'top 85%',
+                        toggleActions: 'play none none reverse',
+                    },
+                });
             },
         });
+
+        return () => {
+            ScrollTrigger.killAll();
+        };
     }, []);
 
     return (
@@ -80,12 +122,14 @@ const WorkGallery = () => {
                                         border: 'none',
                                         cursor: 'pointer',
                                         padding: 0,
+                                        width: 'clamp(120px, 20.7vw, 215px)',
+                                        aspectRatio: '215 / 88',
                                     }}
                                 >
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
-                                        width="215"
-                                        height="88"
+                                        width="100%"
+                                        height="100%"
                                         viewBox="0 0 215 88"
                                         fill="none"
                                     >
@@ -142,7 +186,7 @@ const WorkGallery = () => {
                                             pointerEvents: 'none',
                                         }}
                                     >
-                                        Projects 0{item.id}
+                                        <span className="projects-word">Projects </span>0{item.id}
                                     </span>
                                 </button>
                             );
