@@ -219,15 +219,40 @@ const WorkGallery = () => {
                                     </div>
                                     <p>{item.desc}</p>
 
-                                    <button onClick={() => window.open(item.vercelUrl, '_blank')}>
-                                        Web
-                                    </button>
-                                    <button onClick={() => window.open(item.githubUrl, '_blank')}>
-                                        Github
-                                    </button>
-                                    <button onClick={() => window.open(item.figmaUrl, '_blank')}>
-                                        Figma
-                                    </button>
+                                    <div className="link-buttons">
+                                        {item.vercelUrl && (
+                                            <button
+                                                onClick={() =>
+                                                    window.open(item.vercelUrl, '_blank')
+                                                }
+                                            >
+                                                Web
+                                            </button>
+                                        )}
+                                        {item.githubUrl && (
+                                            <button
+                                                onClick={() =>
+                                                    window.open(item.githubUrl, '_blank')
+                                                }
+                                            >
+                                                Github
+                                            </button>
+                                        )}
+                                        {item.figmaUrl && (
+                                            <button
+                                                onClick={() => window.open(item.figmaUrl, '_blank')}
+                                            >
+                                                Figma
+                                            </button>
+                                        )}
+                                        {item.SDDUrl && (
+                                            <button
+                                                onClick={() => window.open(item.planUrl, '_blank')}
+                                            >
+                                                화면정의서
+                                            </button>
+                                        )}
+                                    </div>
                                 </li>
                                 <li className="right">
                                     <p>

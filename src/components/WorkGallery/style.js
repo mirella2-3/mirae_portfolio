@@ -113,7 +113,9 @@ export const WorkGalleryStyle = styled.div`
                         margin-bottom: 0;
                     }
                     div {
-                        button {
+                        display: flex;
+                        gap: 10px;
+                        > button {
                             background: #cfc0acff;
                             color: #fff;
                             font-weight: 300;
@@ -146,25 +148,27 @@ export const WorkGalleryStyle = styled.div`
                         margin-bottom: 60px;
                         margin-top: 37px;
                     }
-                    button {
-                        color: var(--Brown-brown-500, #564438);
-                        text-align: center;
-                        font-size: 16px;
-                        font-weight: 700;
-                        padding: 8px 26px;
-                        justify-content: center;
-                        align-items: center;
-                        border-radius: 60px;
-                        border: 1px solid var(--Brown-brown-500, #564438);
-                        color: #564438;
-                        background: #fff;
-                        margin-right: 10px;
-
-                        &:hover {
+                    .link-buttons {
+                        button {
+                            color: var(--Brown-brown-500, #564438);
+                            text-align: center;
+                            font-size: 16px;
+                            font-weight: 700;
+                            padding: 8px 26px;
+                            justify-content: center;
+                            align-items: center;
                             border-radius: 60px;
                             border: 1px solid var(--Brown-brown-500, #564438);
-                            background: var(--Brown-brown-500, #564438);
-                            color: #fff;
+                            color: #564438;
+                            background: #fff;
+                            /* margin-right: 10px; */
+
+                            &:hover {
+                                border-radius: 60px;
+                                border: 1px solid var(--Brown-brown-500, #564438);
+                                background: var(--Brown-brown-500, #564438);
+                                color: #fff;
+                            }
                         }
                     }
                 }
@@ -216,38 +220,37 @@ export const WorkGalleryStyle = styled.div`
             .buttonContainer {
                 button {
                     span {
-                        font-size: 22px;
+                        font-size: 16px;
                     }
                 }
             }
             .tabPanel {
-                padding: 74px 0px;
+                padding: 50px 0px;
                 ul {
                     width: 100vw;
                     display: flex;
                     flex-wrap: wrap;
-                    gap: 40px;
+                    gap: 30px;
                     .left {
                         width: 100vw;
                         padding: 0 20px;
                         h2 {
-                            font-size: 80px;
-                            padding-bottom: 30px;
+                            font-size: 40px;
+                            padding-bottom: 20px;
                         }
                         div {
                             button {
-                                font-size: 20px;
+                                font-size: 14px;
                                 &:hover {
-                                    font-size: 20px;
+                                    font-size: 14px;
                                 }
                             }
                         }
                         p {
-                            font-size: 24px;
+                            font-size: 16px;
                         }
                         > button {
-                            font-size: 24px;
-                            /* margin-bottom: 40px; */
+                            font-size: 18px;
                         }
                     }
                     .right {
@@ -264,6 +267,7 @@ export const WorkGalleryStyle = styled.div`
             display: none;
         }
     }
+
     @media screen and (max-width: 600px) {
         .tabContainer {
             .buttonContainer {
