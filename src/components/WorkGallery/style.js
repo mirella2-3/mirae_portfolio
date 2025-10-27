@@ -162,8 +162,12 @@ export const WorkGalleryStyle = styled.div`
                             color: #564438;
                             background: #fff;
                             /* margin-right: 10px; */
+                            cursor: pointer;
 
                             &:hover {
+                                font-size: 16px;
+                                font-weight: 700;
+                                padding: 8px 26px;
                                 border-radius: 60px;
                                 border: 1px solid var(--Brown-brown-500, #564438);
                                 background: var(--Brown-brown-500, #564438);

@@ -26,10 +26,11 @@ const PortfolioData = [
         title: 'MuseOn',
         desc: 'OTT 홈페이지 제작 프로젝트. 기본적인 OTT 서비스의 핵심 기능을 꼼꼼히 구현한 프로젝트. 사용자가 영상을 쉽게 탐색하고 시청할 수 있도록, 연관 콘텐츠 추천, 시청한 콘텐츠 목록, 찜한 콘텐츠 목록,작성한 리뷰 목록 등 기본적인 기능을 완벽하게 적용함.',
         vercelUrl: 'https://portfolio-museon.vercel.app/',
+        PopupUrl: 'https://portfolio-museon.vercel.app/',
         githubUrl: 'https://github.com/mirella2-3/mirae_porfoilo_museon.git',
         SDDUrl: 'https://www.figma.com/proto/MIgbWaXWeTozxFz7fzevf4/MuseOn?node-id=80-5341&t=iPvhhaAQTUPwJ88X-1&scaling=min-zoom&content-scaling=fixed&page-id=54%3A2917',
         imgUrl: '/images/Projects-image/ott.png',
-        tool: ['개인 프로젝트', '올포지션', '반응형', 'React', 'Zustand', 'Axios', 'Sass'],
+        tool: ['개인 프로젝트', '반응형', 'React', 'Zustand', 'Axios', 'Sass'],
     },
 
     {
@@ -46,8 +47,8 @@ const PortfolioData = [
         id: 5,
         title: 'Tim Hortons ',
         desc: 'Figma를 사용한 모바일 리디자인 프로젝트. 모바일 디자인을 피그마로 디자인부터 프로토타입까지 진행한 작업. 피그마의 디자인 시스템 구축, 인터랙션 프로토타입 제작, 협업 기능 활용을 통해 효율적인 작업 프로세스를 구축함. 최종적으로 사용자가 직관적으로 이용할 수 있는 모바일 UI/UX 디자인을 완성.',
-        // vercelUrl:
-        //     'https://www.figma.com/proto/8DdliTGJ6W4UmIYUf5uAPC/%EC%9E%A5%EC%83%88%EB%AF%B8%EC%9E%A5%EC%9C%A0%EC%A0%95%EA%B9%80%EB%AF%B8%EB%9E%98_%EB%AF%B8%EB%8B%88%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8--%EC%A0%9C%EC%B6%9C%EC%9A%A9-?node-id=259-9089&m=draw&scaling=scale-down&content-scaling=fixed&page-id=13%3A53&starting-point-node-id=259%3A9089&show-proto-sidebar=1&t=wQVzTVEmE2YJW4NN-1',
+        prototypeUrl:
+            'https://www.figma.com/proto/8DdliTGJ6W4UmIYUf5uAPC/%EC%9E%A5%EC%83%88%EB%AF%B8%EC%9E%A5%EC%9C%A0%EC%A0%95%EA%B9%80%EB%AF%B8%EB%9E%98_%EB%AF%B8%EB%8B%88%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8--%EC%A0%9C%EC%B6%9C%EC%9A%A9-?node-id=259-9089&m=draw&scaling=scale-down&content-scaling=fixed&page-id=13%3A53&starting-point-node-id=259%3A9089&show-proto-sidebar=1&t=wQVzTVEmE2YJW4NN-1',
         // githubUrl: 'https://github.com/mirella2-3/roundlap.git',
         figmaUrl:
             'https://www.figma.com/deck/2bRcACv98WlKyOccDvZoXM/%EA%B8%B0%ED%9A%8D%EC%84%9C?node-id=61-6&t=1P1CwhsdFxiroH7h-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1',

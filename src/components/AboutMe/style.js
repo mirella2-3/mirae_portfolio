@@ -141,7 +141,7 @@ export const PeopleStyle = styled.div`
         }
         h5 {
             color: #cac6c2;
-            font-size: 16px;
+            font-size: 32px;
             font-weight: 500;
             line-height: 130%;
         }

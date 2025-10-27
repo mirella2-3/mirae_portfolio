@@ -201,7 +201,7 @@ const People = () => {
                 <div className="mask-container" ref={maskContainerRef}>
                     <div className="mask-img" ref={maskImageRef}>
                         <div className="text-box header">
-                            <h1>커피 한 잔처럼, 매 순간을 뜨겁게</h1>
+                            <h5>커피 한 잔처럼, 매 순간을 뜨겁게</h5>
                         </div>
                     </div>
                 </div>

@@ -17,6 +17,23 @@ const WorkGallery = () => {
 
     const startOffset = vw > 2000 ? 'top 65%' : 'top 75%';
 
+    const openPopup = (url, type = 'small') => {
+        if (type === 'full') {
+            window.open(url, '_blank');
+        } else {
+            const width = window.innerWidth > 600 ? 800 : 400;
+            const height = window.innerHeight > 600 ? 600 : 400;
+            const left = (window.innerWidth - width) / 2;
+            const top = (window.innerHeight - height) / 2;
+
+            window.open(
+                url,
+                '_blank',
+                `width=${width},height=${height},top=${top},left=${left},resizable=yes,scrollbars=yes`
+            );
+        }
+    };
+
     useEffect(() => {
         const el = sectionRef.current;
 
@@ -212,7 +229,7 @@ const WorkGallery = () => {
                                             />
                                         )}
                                     </h2>
-                                    <div>
+                                    <div className="sub-title">
                                         {item.tool.map((toolItem, toolIndex) => (
                                             <button key={toolIndex}>{toolItem}</button>
                                         ))}
@@ -222,11 +239,16 @@ const WorkGallery = () => {
                                     <div className="link-buttons">
                                         {item.vercelUrl && (
                                             <button
-                                                onClick={() =>
-                                                    window.open(item.vercelUrl, '_blank')
-                                                }
+                                                onClick={() => openPopup(item.vercelUrl, 'full')}
                                             >
                                                 Web
+                                            </button>
+                                        )}
+                                        {item.PopupUrl && (
+                                            <button
+                                                onClick={() => openPopup(item.PopupUrl, 'small')}
+                                            >
+                                                Popup
                                             </button>
                                         )}
                                         {item.githubUrl && (
@@ -247,15 +269,35 @@ const WorkGallery = () => {
                                         )}
                                         {item.SDDUrl && (
                                             <button
-                                                onClick={() => window.open(item.planUrl, '_blank')}
+                                                onClick={() => window.open(item.SDDUrl, '_blank')}
                                             >
                                                 화면정의서
+                                            </button>
+                                        )}
+                                        {item.prototypeUrl && (
+                                            <button
+                                                onClick={() =>
+                                                    window.open(item.prototypeUrl, '_blank')
+                                                }
+                                            >
+                                                ProtoType
                                             </button>
                                         )}
                                     </div>
                                 </li>
                                 <li className="right">
-                                    <p>
+                                    <p
+                                        onClick={() => {
+                                            if (item.vercelUrl) {
+                                                openPopup(item.vercelUrl, 'full');
+                                            } else if (item.PopupUrl) {
+                                                openPopup(item.PopupUrl, 'small');
+                                            } else if (item.figmaUrl) {
+                                                window.open(item.figmaUrl, '_blank');
+                                            }
+                                        }}
+                                        style={{ cursor: 'pointer', position: 'relative' }}
+                                    >
                                         <img src={item.imgUrl} alt={item.imgUrl} />
                                         <p className="txt">
                                             {item.title}
