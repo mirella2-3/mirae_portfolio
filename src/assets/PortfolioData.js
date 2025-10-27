@@ -24,7 +24,7 @@ const PortfolioData = [
     {
         id: 3,
         title: 'MuseOn',
-        desc: 'OTT 홈페이지 제작 프로젝트. 기본적인 OTT 서비스의 핵심 기능을 꼼꼼히 구현한 프로젝트. 사용자가 영상을 쉽게 탐색하고 시청할 수 있도록, 연관 콘텐츠 추천, 시청한 콘텐츠 목록, 찜한 콘텐츠 목록,작성한 리뷰 목록 등 기본적인 기능을 완벽하게 적용함.',
+        desc: 'OTT 홈페이지 제작 프로젝트. 기본적인 OTT 서비스의 핵심 기능을 꼼꼼히 구현한 프로젝트. 사용자가 영상을 쉽게 탐색하고 시청할 수 있도록, 연관 콘텐츠 추천, 시청한 콘텐츠 목록, 찜한 콘텐츠 목록,작성한 리뷰 목록 등 기본적인 기능을 완벽하게 적용함. 반응형 웹 디자인을 적용하여 다양한 디바이스에서도 최적화된 사용자 경험을 제공하도록 구현함.',
         vercelUrl: 'https://portfolio-museon.vercel.app/',
         PopupUrl: 'https://portfolio-museon.vercel.app/',
         githubUrl: 'https://github.com/mirella2-3/mirae_porfoilo_museon.git',

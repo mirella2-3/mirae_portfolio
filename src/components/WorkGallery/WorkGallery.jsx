@@ -248,7 +248,7 @@ const WorkGallery = () => {
                                             <button
                                                 onClick={() => openPopup(item.PopupUrl, 'small')}
                                             >
-                                                Popup
+                                                Mobile
                                             </button>
                                         )}
                                         {item.githubUrl && (
