@@ -21,10 +21,10 @@ const WorkGallery = () => {
         if (type === 'full') {
             window.open(url, '_blank');
         } else {
-            const width = window.innerWidth > 600 ? 800 : 400;
-            const height = window.innerHeight > 600 ? 600 : 400;
+            const width = 480;
+            const height = 800;
             const left = (window.innerWidth - width) / 2;
-            const top = (window.innerHeight - height) / 2;
+            const top = 0;
 
             window.open(
                 url,
@@ -78,13 +78,6 @@ const WorkGallery = () => {
             },
 
             '(max-width: 600px)': function () {
-                // gsap.set(el, {
-                //     scale: 1,
-                //     y: 0,
-                //     filter: 'grayscale(0%)',
-                //     opacity: 1,
-                // });
-
                 gsap.to(el, {
                     opacity: 1,
                     filter: 'grayscale(0%)',
@@ -251,6 +244,7 @@ const WorkGallery = () => {
                                                 Mobile
                                             </button>
                                         )}
+
                                         {item.githubUrl && (
                                             <button
                                                 onClick={() =>
@@ -264,7 +258,7 @@ const WorkGallery = () => {
                                             <button
                                                 onClick={() => window.open(item.figmaUrl, '_blank')}
                                             >
-                                                Figma
+                                                uiux기획서
                                             </button>
                                         )}
                                         {item.SDDUrl && (
