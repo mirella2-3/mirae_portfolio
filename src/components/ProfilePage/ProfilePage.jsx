@@ -1,9 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ProfilePageStyle } from './style';
+import gsap from 'gsap';
 
 const ProfilePage = () => {
     const [isInView, setIsInView] = useState(false);
     const sectionRef = useRef(null);
+    const firstImgRef = useRef(null);
+    const secondImgRef = useRef(null);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -29,22 +32,53 @@ const ProfilePage = () => {
         };
     }, []);
 
+    useEffect(() => {
+        const ctx = gsap.context(() => {
+            // 첫 번째 이미지 fadeIn + 약간 위에서 내려오는 효과
+            gsap.fromTo(
+                firstImgRef.current,
+                { opacity: 0, y: 30 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    scrollTrigger: {
+                        trigger: sectionRef.current,
+                        start: 'top 20%',
+                        end: 'top 0%',
+                        toggleActions: 'play none none reverse',
+                    },
+                }
+            );
+
+            gsap.fromTo(
+                secondImgRef.current,
+                { opacity: 0, y: 30 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    scrollTrigger: {
+                        trigger: sectionRef.current,
+                        start: 'top -10%',
+                        end: 'top 0%',
+                        toggleActions: 'play none none reverse',
+                    },
+                }
+            );
+        }, sectionRef);
+
+        return () => ctx.revert();
+    }, []);
+
     return (
         <ProfilePageStyle ref={sectionRef}>
             <div className="profilePhoto">
                 <p>
-                    <img
-                        className={isInView ? 'fadeIn' : ''}
-                        src="/images/Profile-image/first.png"
-                        alt="first"
-                    />
+                    <img ref={firstImgRef} src="/images/Profile-image/first.png" alt="first" />
                 </p>
                 <p>
-                    <img
-                        className={isInView ? 'fadeIn' : ''}
-                        src="/images/Profile-image/second.png"
-                        alt="second"
-                    />
+                    <img ref={secondImgRef} src="/images/Profile-image/second.png" alt="second" />
                 </p>
             </div>
             <div className="shadow">
