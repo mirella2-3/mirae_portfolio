@@ -1,12 +1,28 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Lenis from 'lenis';
 import { IntroStyle } from './style';
+import { PiCoffeeBeanFill } from 'react-icons/pi';
+import ScrollIndicator from '../Ui/ScrollIndicator';
 
 const Intro = () => {
+    const containerRef = useRef(null);
+
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
+
+        gsap.fromTo(
+            containerRef.current,
+            {
+                clipPath: 'inset(0 50% 0 50%)',
+            },
+            {
+                clipPath: 'inset(0% 0% 0% 0%)',
+                duration: 1.5,
+                ease: 'power3.inOut',
+            }
+        );
 
         const lenis = new Lenis();
         lenis.on('scroll', ScrollTrigger.update);
@@ -16,7 +32,6 @@ const Intro = () => {
         const smoothStep = (p) => p * p * (3 - 2 * p);
 
         if (window.innerWidth > 1000) {
-            // --- Section con1 ---
             ScrollTrigger.create({
                 trigger: '.con1',
                 start: 'top top',
@@ -65,7 +80,6 @@ const Intro = () => {
                 },
             });
 
-            // --- Section con3 pinning ---
             ScrollTrigger.create({
                 trigger: '.con3',
                 start: 'top top',
@@ -74,7 +88,6 @@ const Intro = () => {
                 pinSpacing: true,
             });
 
-            // --- con3 position management ---
             ScrollTrigger.create({
                 trigger: '.con3',
                 start: 'top top',
@@ -103,7 +116,6 @@ const Intro = () => {
                 },
             });
 
-            // --- con3 scroll animation ---
             ScrollTrigger.create({
                 trigger: '.con3',
                 start: 'top bottom',
@@ -192,14 +204,7 @@ const Intro = () => {
                             rotationY = 180;
                         }
 
-                        gsap.set(cardId, {
-                            opacity,
-                            y,
-                            x,
-                            rotate,
-                            scale,
-                        });
-
+                        gsap.set(cardId, { opacity, y, x, rotate, scale });
                         gsap.set(innerCard, { rotationY });
                     });
                 },
@@ -213,8 +218,9 @@ const Intro = () => {
     }, []);
 
     return (
-        <IntroStyle className="portfolio">
+        <IntroStyle ref={containerRef} className="portfolio">
             <section className="con1">
+                <ScrollIndicator />
                 <div className="con1-cards">
                     <div className="card" id="con1-card-1"></div>
                     <div className="card" id="con1-card-2"></div>
@@ -223,7 +229,10 @@ const Intro = () => {
             </section>
 
             <section className="con2">
-                <h1>Where the aroma of my coffee first begins to unfold.</h1>
+                <h1>
+                    <PiCoffeeBeanFill size={24} color="#998A7C" style={{ marginRight: '17px' }} />
+                    Where the aroma of my coffee first begins to unfold.
+                </h1>
             </section>
 
             <section className="con3"></section>

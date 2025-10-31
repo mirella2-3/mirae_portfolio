@@ -4,6 +4,7 @@ export const WorkGalleryStyle = styled.div`
     height: 650px;
     position: relative;
     z-index: 100;
+    background: #f8f8f8;
 
     @keyframes infiniteScroll {
         from {

@@ -105,12 +105,6 @@ const TextPage = () => {
                         { opacity: 1, y: 0, duration: 0.6, stagger: 0.2 }
                     );
                 },
-
-                // '(max-width: 600px)': function () {
-                //     gsap.set([gradientRef.current, h1Ref.current, h3Ref.current, spanRef.current], {
-                //         clearProps: 'all',
-                //     });
-                // },
             });
         }, sectionRef);
 

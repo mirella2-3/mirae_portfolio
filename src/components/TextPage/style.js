@@ -6,6 +6,7 @@ export const TextPageStyle = styled.div`
     height: 700px;
     padding-top: 160px;
     position: relative;
+    background: #f8f8f8;
 
     .gradient-bg {
         position: absolute;
