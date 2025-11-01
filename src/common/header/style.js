@@ -2,12 +2,12 @@ import styled from 'styled-components';
 
 export const HeaderStyle = styled.header`
     background: transparent;
-
     position: fixed;
     top: 38px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 9999;
+
     @media screen and (max-width: 1023px) {
     }
     @media screen and (max-width: 600px) {
@@ -49,6 +49,9 @@ export const NavStyle = styled.nav`
             aspect-ratio: 22/21;
             opacity: 0;
             transition: all 0.3s;
+            &.active {
+                opacity: 1;
+            }
         }
 
         &:hover {

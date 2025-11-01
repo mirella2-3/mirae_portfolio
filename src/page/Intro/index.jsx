@@ -1,35 +1,28 @@
-import { useState } from 'react';
-import { gsap } from 'gsap';
+import { useNavigate } from 'react-router-dom';
 import { FirstPage } from './style';
 import ViewProjectButton from '../../components/Ui/ViewProjectButton';
-import Home from '../Home';
 
 const Intro0 = () => {
-    const [showNext, setShowNext] = useState(false);
+    const navigate = useNavigate();
 
     const handleNext = () => {
-        setShowNext(true);
+        // Layout 안의 Portfolio(Home) 페이지로 이동
+        navigate('/portfolio');
     };
 
     return (
         <FirstPage>
-            {!showNext ? (
-                <>
-                    <ul className="text">
-                        <li>A Cup of Code</li>
-                        <li>A Cup of Code</li>
-                        <li>A Cup of Code</li>
-                        <li>A Cup of Code</li>
-                    </ul>
-                    <div className="coffee">
-                        <img src="/images/Intro-image/coffee.png" alt="Coffee" />
-                    </div>
+            <ul className="text">
+                <li>A Cup of Code</li>
+                <li>A Cup of Code</li>
+                <li>A Cup of Code</li>
+                <li>A Cup of Code</li>
+            </ul>
+            <div className="coffee">
+                <img src="/images/Intro-image/coffee.png" alt="Coffee" />
+            </div>
 
-                    <ViewProjectButton onClick={handleNext} />
-                </>
-            ) : (
-                <Home />
-            )}
+            <ViewProjectButton onClick={handleNext} />
         </FirstPage>
     );
 };

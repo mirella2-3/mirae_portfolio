@@ -8,13 +8,12 @@ const App = () => {
     return (
         <BrowserRouter>
             <GlobalStyle />
-
             <Routes>
-                <Route path="/" element={<Navigate to="/intro" replace />} />
-                <Route path="/intro" element={<Intro0 />} />
-                <Route path="/home" element={<Layout />}>
+                <Route path="/" element={<Intro0 />} />
+                <Route path="/portfolio" element={<Layout />}>
                     <Route index element={<Home />} />
                 </Route>
+                <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
         </BrowserRouter>
     );

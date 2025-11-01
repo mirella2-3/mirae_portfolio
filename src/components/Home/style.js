@@ -18,14 +18,10 @@ export const IntroStyle = styled.div`
 
     /* con1 */
     .con1 {
-        background-color: #f9f4eb;
-
         background-image: url(/images/Intro-image/Index021.png);
         background-size: cover;
         background-position: 0 0;
         background-repeat: no-repeat;
-        background-color: #362718;
-        color: #000000;
         display: flex;
         justify-content: center;
 

@@ -13,15 +13,10 @@ export const ProfilePageStyle = styled.div`
         }
     }
 
-    .circle {
-        position: absolute;
-        right: 5vw;
-        bottom: -vh;
-    }
-
     .inner {
         height: 760px;
-        /* border: 1px solid #000; */
+        width: 1700px;
+
         .text-box {
             display: flex;
             flex-direction: column;
@@ -38,64 +33,40 @@ export const ProfilePageStyle = styled.div`
         @keyframes typing {
             0% {
                 width: 0;
-                opacity: 0;
-            }
-            1% {
                 opacity: 1;
+                visibility: visible;
             }
             100% {
+                width: 100%;
                 opacity: 1;
             }
         }
         .typing-box {
-            display: block;
             position: absolute;
             right: 0;
             bottom: 0;
             text-align: right;
 
+            .circle {
+                position: absolute;
+                bottom: -15px;
+                right: 70px;
+            }
+
             .typing-demo,
             .typing-demo2 {
-                width: 670px;
                 white-space: nowrap;
                 overflow: hidden;
+                display: inline-block; // 중요
+                width: 0; // 초기 width 0
+                opacity: 1;
                 color: var(--Black, #060606);
                 font-family: 'Pretendard';
                 font-size: 32px;
                 font-style: normal;
                 font-weight: 600;
                 line-height: 170%;
-                opacity: 0;
-                visibility: hidden;
-                animation-fill-mode: forwards;
-
-                &.active {
-                    opacity: 1;
-                    animation: typing 2s steps(22);
-                }
-            }
-
-            .typing-demo2 {
-                animation-delay: 2s;
-                strong {
-                    color: var(--Black, #060606);
-                    font-family: Pretendard;
-                    font-size: 32px;
-                    font-style: normal;
-                    font-weight: 700;
-                    line-height: 170%;
-                }
-            }
-            .typing-demo.active {
-                animation: typing 2s steps(22);
-                visibility: visible;
-            }
-
-            .typing-demo2.active {
-                animation: typing 2s steps(22);
-                animation-delay: 2s; // 2초 딜레이
-                visibility: visible;
-                opacity: 1;
+                letter-spacing: -2px;
             }
         }
     }
@@ -106,7 +77,6 @@ export const ProfilePageStyle = styled.div`
         top: 0;
         left: 0;
         img {
-            /* filter: blur(8px); */
             mix-blend-mode: multiply;
             width: 100vw;
             opacity: 0.3;

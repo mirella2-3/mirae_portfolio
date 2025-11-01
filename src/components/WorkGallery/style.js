@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const WorkGalleryStyle = styled.div`
-    height: 650px;
+    height: 700px;
     position: relative;
     z-index: 100;
     background: #f8f8f8;
@@ -16,7 +16,7 @@ export const WorkGalleryStyle = styled.div`
     }
     .bgText {
         position: absolute;
-        bottom: 30px;
+        bottom: 100px;
         line-height: 1;
         z-index: -1;
 

@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import Lenis from '@studio-freight/lenis';
-import CardData from '../../assets/CardData';
-import { CardStyle } from './style';
+import CardData from './CardData';
+import { CardStyle } from '../components/Home/style';
 
 gsap.registerPlugin(ScrollTrigger);
 

@@ -8,27 +8,23 @@ const scrollToSection = (sectionId) => {
     }
 };
 
-const Navbar = () => {
+const Navbar = ({ currentSection }) => {
+    const buttons = [
+        { id: 'Profile', label: 'Profile' },
+        { id: 'Projects', label: 'Projects' },
+        { id: 'AboutMe', label: 'About Me' },
+    ];
+
     return (
         <NavStyle>
-            <button onClick={() => scrollToSection('Profile')}>
-                Profile
-                <p>
-                    <img src="/images/Intro-image/header.png" alt="" />
-                </p>
-            </button>
-            <button onClick={() => scrollToSection('Projects')}>
-                Projects
-                <p>
-                    <img src="/images/Intro-image/header.png" alt="" />
-                </p>
-            </button>
-            <button onClick={() => scrollToSection('AboutMe')}>
-                About Me
-                <p>
-                    <img src="/images/Intro-image/header.png" alt="" />
-                </p>
-            </button>
+            {buttons.map((btn) => (
+                <button key={btn.id} onClick={() => scrollToSection(btn.id)}>
+                    {btn.label}
+                    <p className={currentSection === btn.id ? 'active' : ''}>
+                        <img src="/images/Intro-image/header.png" alt="" />
+                    </p>
+                </button>
+            ))}
         </NavStyle>
     );
 };

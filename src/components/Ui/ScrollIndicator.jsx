@@ -3,7 +3,7 @@ import styled, { keyframes } from 'styled-components';
 
 const colorBg = '#362718';
 const colorOutline = '#ffffff';
-const colorOutlineFade = '#4e5559';
+const colorOutlineFade = '#81614E';
 
 const widthMouse = 40;
 const heightMouse = 60;

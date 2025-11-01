@@ -11,38 +11,78 @@ const SkillSlide = () => {
         const items = Array.from(slider.children);
         const originalCount = items.length;
 
-        const itemWidth = items[0].offsetWidth;
-        const totalWidth = itemWidth * originalCount;
+        let loadedCount = 0;
+        const checkImagesLoaded = () => {
+            loadedCount++;
+            if (loadedCount === originalCount) {
+                initSlider(); // 이제 안전하게 호출 가능
+            }
+        };
 
-        for (let i = 0; i < originalCount; i++) {
-            const clone = items[i].cloneNode(true);
-            slider.appendChild(clone);
-        }
-
-        slider.style.width = `${itemWidth * slider.children.length}px`;
-
-        gsap.set(slider, { x: 0 });
-
-        tl.current = gsap.to(slider, {
-            x: -totalWidth,
-            duration: 240,
-
-            repeat: -1,
-            modifiers: {
-                x: gsap.utils.unitize((x) => parseFloat(x) % totalWidth),
-            },
+        // 이미지 로드 확인
+        items.forEach((li) => {
+            const img = li.querySelector('img');
+            if (img.complete) {
+                checkImagesLoaded();
+            } else {
+                img.addEventListener('load', checkImagesLoaded);
+            }
         });
 
-        const handleEnter = () => tl.current.pause();
-        const handleLeave = () => tl.current.resume();
+        // ⚡ 여기만 바꿈
+        function initSlider() {
+            const itemWidth = items[0].offsetWidth;
 
-        slider.addEventListener('mouseenter', handleEnter);
-        slider.addEventListener('mouseleave', handleLeave);
+            // 기존 클론 제거
+            while (slider.children.length > originalCount) {
+                slider.removeChild(slider.lastChild);
+            }
 
+            // 앞뒤로 클론 추가
+            for (let i = originalCount - 1; i >= 0; i--) {
+                const clone = items[i].cloneNode(true);
+                slider.insertBefore(clone, slider.firstChild);
+            }
+            for (let i = 0; i < originalCount; i++) {
+                const clone = items[i].cloneNode(true);
+                slider.appendChild(clone);
+            }
+
+            const totalCount = slider.children.length;
+            slider.style.width = `${itemWidth * totalCount}px`;
+
+            gsap.set(slider, { x: 0 });
+
+            // 무한 슬라이드 타임라인
+            tl.current = gsap.timeline({ repeat: -1, defaults: { ease: 'linear' } });
+            tl.current.to(slider, {
+                x: -itemWidth * originalCount,
+                duration: 100,
+                onComplete: () => {
+                    gsap.set(slider, { x: 0 });
+                },
+            });
+
+            // 마우스 이벤트
+            const handleEnter = () => tl.current.pause();
+            const handleLeave = () => tl.current.resume();
+            slider.addEventListener('mouseenter', handleEnter);
+            slider.addEventListener('mouseleave', handleLeave);
+
+            // 클린업
+            return () => {
+                tl.current.kill();
+                slider.removeEventListener('mouseenter', handleEnter);
+                slider.removeEventListener('mouseleave', handleLeave);
+            };
+        }
+
+        // 클린업
         return () => {
-            tl.current.kill();
-            slider.removeEventListener('mouseenter', handleEnter);
-            slider.removeEventListener('mouseleave', handleLeave);
+            items.forEach((li) => {
+                const img = li.querySelector('img');
+                img.removeEventListener('load', checkImagesLoaded);
+            });
         };
     }, []);
 
