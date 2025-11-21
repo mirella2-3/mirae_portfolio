@@ -19,7 +19,7 @@ const Home = () => {
             const about = document.querySelector('section#AboutMe');
 
             const scrollY = window.scrollY;
-            const offset = 100; // 조금 빨리 바뀌게 하는 여유값
+            const offset = 100;
 
             if (intro && scrollY < intro.offsetHeight - offset) {
                 setShowHeader(false);
@@ -41,7 +41,7 @@ const Home = () => {
         };
 
         window.addEventListener('scroll', handleScroll);
-        handleScroll(); // 초기 상태 확인
+        handleScroll();
 
         return () => window.removeEventListener('scroll', handleScroll);
     }, [setShowHeader, setCurrentSection]);

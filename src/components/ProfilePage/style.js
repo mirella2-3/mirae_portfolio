@@ -28,6 +28,7 @@ export const ProfilePageStyle = styled.div`
                 font-size: 52px;
                 text-align: center;
                 font-weight: 600;
+                letter-spacing: 1px;
             }
         }
         @keyframes typing {
@@ -83,9 +84,10 @@ export const ProfilePageStyle = styled.div`
         }
     }
     @media screen and (max-width: 1023px) {
-        height: 74vh;
+        /* height: 74vh; */
+        height: 100vh;
         position: relative;
-        padding-bottom: 0;
+
         .profilePhoto {
             p {
                 img {
@@ -97,14 +99,15 @@ export const ProfilePageStyle = styled.div`
         .circle {
             left: 0;
             bottom: 0;
-            border: 1px solid #000;
         }
         .inner {
-            height: 74vh;
+            /* height: 74vh; */
+            height: 100vh;
             width: 100%;
 
             .text-box {
                 width: 100vw;
+
                 h3 {
                 }
             }
@@ -121,9 +124,11 @@ export const ProfilePageStyle = styled.div`
     }
     @media screen and (max-width: 600px) {
         width: 100vw;
+        height: 85vh;
 
         .inner {
             width: 100vw;
+            height: 85vh;
             .typing-box {
                 width: 600px;
 
